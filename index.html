@@ -1,17 +1,54 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-ag" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#0284c7" />
     <meta
       name="description"
       content="English Grammar Learning Game"
     />
     <title>English Grammar Game</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
+      }
+       @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+        20%, 40%, 60%, 80% { transform: translateX(5px); }
+      }
+      .animate-shake {
+        animation: shake 0.5s ease-in-out;
+      }
+      @keyframes pop {
+        0% { transform: scale(0.9); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+      .animate-pop {
+        animation: pop 0.3s ease-out;
+      }
+      .confetti {
+        position: absolute;
+        width: 8px;
+        height: 16px;
+        background-color: #f00;
+        opacity: 0.7;
+        animation: confetti-fall 3s linear infinite;
+      }
+      @keyframes confetti-fall {
+        0% { transform: translateY(-10vh) rotate(0deg); }
+        100% { transform: translateY(110vh) rotate(720deg); }
+      }
+    </style>
   <script type="importmap">
 {
   "imports": {

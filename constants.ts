@@ -1,4 +1,4 @@
-import type { Level } from './types';
+import type { Level, Question } from './types';
 import { QuestionType } from './types';
 import { ClockIcon, SparklesIcon, CalendarIcon, ChatBubbleLeftRightIcon, ArrowTrendingUpIcon, QuestionMarkCircleIcon, ChatBubbleLeftEllipsisIcon } from './components/icons';
 
@@ -20,7 +20,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Affirmative',
         sentence: 'She ___ to the gym every day.',
-        options: [{ text: 'go', isCorrect: false }, { text: 'goes', isCorrect: true }, { text: 'is going', isCorrect: false }],
+        options: [{ text: 'go', isCorrect: false }, { text: 'goes', isCorrect: true }, { text: 'is going', isCorrect: false }, { text: 'going', isCorrect: false }],
         explanation: "En presente simple, para la tercera persona del singular (he, she, it), se añade -s o -es al verbo.",
         translation: "Ella va al gimnasio todos los días."
       },
@@ -29,7 +29,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Negative',
         sentence: 'They ___ like spicy food.',
-        options: [{ text: "don't", isCorrect: true }, { text: "doesn't", isCorrect: false }, { text: "aren't", isCorrect: false }],
+        options: [{ text: "don't", isCorrect: true }, { text: "doesn't", isCorrect: false }, { text: "aren't", isCorrect: false }, { text: "isn't", isCorrect: false }],
         explanation: "Para negar en presente simple con 'they', 'we', 'you', 'I', se utiliza 'do not' o 'don't'.",
         translation: "A ellos no les gusta la comida picante."
       },
@@ -38,7 +38,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Interrogative',
         sentence: '___ he speak French?',
-        options: [{ text: 'Do', isCorrect: false }, { text: 'Is', isCorrect: false }, { text: 'Does', isCorrect: true }],
+        options: [{ text: 'Do', isCorrect: false }, { text: 'Is', isCorrect: false }, { text: 'Does', isCorrect: true }, { text: 'Are', isCorrect: false }],
         explanation: "Para preguntar en presente simple con 'he', 'she', 'it', se utiliza el auxiliar 'Does' al principio.",
         translation: "¿Él habla francés?"
       },
@@ -47,7 +47,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Affirmative',
         sentence: 'We ___ in a small apartment.',
-        options: [{ text: 'lives', isCorrect: false }, { text: 'live', isCorrect: true }, { text: 'are living', isCorrect: false }],
+        options: [{ text: 'lives', isCorrect: false }, { text: 'live', isCorrect: true }, { text: 'are living', isCorrect: false }, { text: 'living', isCorrect: false }],
         explanation: "Para 'we', 'they', 'you', 'I', el verbo en presente simple se usa en su forma base (sin -s).",
         translation: "Vivimos en un apartamento pequeño."
       },
@@ -56,7 +56,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Negative',
         sentence: 'He ___ play the guitar.',
-        options: [{ text: "don't", isCorrect: false }, { text: "isn't", isCorrect: false }, { text: "doesn't", isCorrect: true }],
+        options: [{ text: "don't", isCorrect: false }, { text: "isn't", isCorrect: false }, { text: "doesn't", isCorrect: true }, { text: "hasn't", isCorrect: false }],
         explanation: "Para negar en presente simple con 'he', 'she', 'it', se utiliza 'does not' o 'doesn't'.",
         translation: "Él no toca la guitarra."
       },
@@ -65,7 +65,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Interrogative',
         sentence: '___ they work together?',
-        options: [{ text: 'Do', isCorrect: true }, { text: 'Does', isCorrect: false }, { text: 'Are', isCorrect: false }],
+        options: [{ text: 'Do', isCorrect: true }, { text: 'Does', isCorrect: false }, { text: 'Are', isCorrect: false }, { text: 'Have', isCorrect: false }],
         explanation: "Para preguntar en presente simple con 'they', se usa el auxiliar 'Do' al principio.",
         translation: "¿Ellos trabajan juntos?"
       },
@@ -74,7 +74,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Affirmative',
         sentence: 'The sun ___ in the east.',
-        options: [{ text: 'rise', isCorrect: false }, { text: 'rises', isCorrect: true }, { text: 'is rising', isCorrect: false }],
+        options: [{ text: 'rise', isCorrect: false }, { text: 'rises', isCorrect: true }, { text: 'is rising', isCorrect: false }, { text: 'risen', isCorrect: false }],
         explanation: "'The sun' es tercera persona del singular (it), por lo que se añade -s al verbo.",
         translation: "El sol sale por el este."
       },
@@ -83,7 +83,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Negative',
         sentence: 'I ___ understand the question.',
-        options: [{ text: "doesn't", isCorrect: false }, { text: "am not", isCorrect: false }, { text: "don't", isCorrect: true }],
+        options: [{ text: "doesn't", isCorrect: false }, { text: "am not", isCorrect: false }, { text: "don't", isCorrect: true }, { text: "can't", isCorrect: false }],
         explanation: "Para negar en presente simple con 'I', se utiliza 'do not' o 'don't'.",
         translation: "No entiendo la pregunta."
       },
@@ -92,7 +92,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Interrogative',
         sentence: '___ she like coffee?',
-        options: [{ text: 'Do', isCorrect: false }, { text: 'Does', isCorrect: true }, { text: 'Is', isCorrect: false }],
+        options: [{ text: 'Do', isCorrect: false }, { text: 'Does', isCorrect: true }, { text: 'Is', isCorrect: false }, { text: 'Has', isCorrect: false }],
         explanation: "Para preguntar en presente simple con 'she', se utiliza el auxiliar 'Does'.",
         translation: "¿A ella le gusta el café?"
       },
@@ -101,7 +101,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Affirmative',
         sentence: 'My parents ___ in Canada.',
-        options: [{ text: 'live', isCorrect: true }, { text: 'lives', isCorrect: false }, { text: 'is living', isCorrect: false }],
+        options: [{ text: 'live', isCorrect: true }, { text: 'lives', isCorrect: false }, { text: 'is living', isCorrect: false }, { text: 'are live', isCorrect: false }],
         explanation: "'My parents' es plural (they), por lo que el verbo va en su forma base.",
         translation: "Mis padres viven en Canadá."
       },
@@ -466,7 +466,7 @@ export const LEVELS: Level[] = [
         explanation: "'The food' (it) es singular, por lo que se usa 'doesn't' para negar.",
         translation: "La comida aquí no sabe muy bien."
       },
-    ],
+    ] as Question[],
   },
   {
     id: 'present-continuous',
@@ -485,7 +485,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Affirmative',
         sentence: 'I am ___ a book right now.',
-        options: [{ text: 'read', isCorrect: false }, { text: 'reading', isCorrect: true }, { text: 'reads', isCorrect: false }],
+        options: [{ text: 'read', isCorrect: false }, { text: 'reading', isCorrect: true }, { text: 'reads', isCorrect: false }, { text: 'to read', isCorrect: false }],
         explanation: "El presente continuo se forma con el verbo 'to be' (am, is, are) + el verbo principal en gerundio (-ing).",
         translation: "Estoy leyendo un libro ahora mismo."
       },
@@ -494,7 +494,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Negative',
         sentence: 'He ___ watching TV.',
-        options: [{ text: "isn't", isCorrect: true }, { text: "don't", isCorrect: false }, { text: "doesn't", isCorrect: false }],
+        options: [{ text: "isn't", isCorrect: true }, { text: "don't", isCorrect: false }, { text: "doesn't", isCorrect: false }, { text: "not", isCorrect: false }],
         explanation: "Para negar en presente continuo, se añade 'not' después del verbo 'to be'. La contracción de 'is not' es 'isn't'.",
         translation: "Él no está viendo la televisión."
       },
@@ -503,7 +503,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Interrogative',
         sentence: '___ they playing soccer?',
-        options: [{ text: 'Do', isCorrect: false }, { text: 'Are', isCorrect: true }, { text: 'Does', isCorrect: false }],
+        options: [{ text: 'Do', isCorrect: false }, { text: 'Are', isCorrect: true }, { text: 'Does', isCorrect: false }, { text: 'Is', isCorrect: false }],
         explanation: "Para preguntar en presente continuo, se invierte el sujeto y el verbo 'to be'. 'Are' va al principio de la oración.",
         translation: "¿Están ellos jugando al fútbol?"
       },
@@ -512,7 +512,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Affirmative',
         sentence: 'You ___ making a lot of noise!',
-        options: [{ text: 'is', isCorrect: false }, { text: 'are', isCorrect: true }, { text: 'do', isCorrect: false }],
+        options: [{ text: 'is', isCorrect: false }, { text: 'are', isCorrect: true }, { text: 'do', isCorrect: false }, { text: 'am', isCorrect: false }],
         explanation: "Con el sujeto 'you', se usa 'are' para formar el presente continuo.",
         translation: "¡Estás haciendo mucho ruido!"
       },
@@ -521,7 +521,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Negative',
         sentence: 'We ___ going to the party tonight.',
-        options: [{ text: "don't", isCorrect: false }, { text: "doesn't", isCorrect: false }, { text: "aren't", isCorrect: true }],
+        options: [{ text: "don't", isCorrect: false }, { text: "doesn't", isCorrect: false }, { text: "aren't", isCorrect: true }, { text: "not", isCorrect: false }],
         explanation: "Para negar con 'we' en presente continuo, se usa 'are not' o 'aren't'.",
         translation: "Nosotros no vamos a la fiesta esta noche."
       },
@@ -530,7 +530,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Interrogative',
         sentence: 'What ___ you doing?',
-        options: [{ text: 'is', isCorrect: false }, { text: 'do', isCorrect: false }, { text: 'are', isCorrect: true }],
+        options: [{ text: 'is', isCorrect: false }, { text: 'do', isCorrect: false }, { text: 'are', isCorrect: true }, { text: 'does', isCorrect: false }],
         explanation: "En preguntas con 'you' en presente continuo, se usa 'are' antes del sujeto.",
         translation: "¿Qué estás haciendo?"
       },
@@ -539,7 +539,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Affirmative',
         sentence: 'She is ___ for her keys.',
-        options: [{ text: 'look', isCorrect: false }, { text: 'looking', isCorrect: true }, { text: 'looks', isCorrect: false }],
+        options: [{ text: 'look', isCorrect: false }, { text: 'looking', isCorrect: true }, { text: 'looks', isCorrect: false }, { text: 'to look', isCorrect: false }],
         explanation: "Después de 'is', el verbo principal va en gerundio (-ing) en el presente continuo.",
         translation: "Ella está buscando sus llaves."
       },
@@ -548,7 +548,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Negative',
         sentence: 'It ___ raining anymore.',
-        options: [{ text: "doesn't", isCorrect: false }, { text: "isn't", isCorrect: true }, { text: "don't", isCorrect: false }],
+        options: [{ text: "doesn't", isCorrect: false }, { text: "isn't", isCorrect: true }, { text: "don't", isCorrect: false }, { text: "not is", isCorrect: false }],
         explanation: "La negación para 'it' en presente continuo es 'is not' o 'isn't'.",
         translation: "Ya no está lloviendo."
       },
@@ -557,7 +557,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Interrogative',
         sentence: '___ he sleeping?',
-        options: [{ text: 'Does', isCorrect: false }, { text: 'Are', isCorrect: false }, { text: 'Is', isCorrect: true }],
+        options: [{ text: 'Does', isCorrect: false }, { text: 'Are', isCorrect: false }, { text: 'Is', isCorrect: true }, { text: 'Do', isCorrect: false }],
         explanation: "Para preguntar con 'he' en presente continuo, se pone 'Is' al principio.",
         translation: "¿Está él durmiendo?"
       },
@@ -566,7 +566,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Affirmative',
         sentence: 'The children ___ in the garden.',
-        options: [{ text: 'play', isCorrect: false }, { text: 'are playing', isCorrect: true }, { text: 'plays', isCorrect: false }],
+        options: [{ text: 'play', isCorrect: false }, { text: 'are playing', isCorrect: true }, { text: 'plays', isCorrect: false }, { text: 'is playing', isCorrect: false }],
         explanation: "'The children' es plural (they), por lo que se usa 'are' + el verbo en gerundio (-ing).",
         translation: "Los niños están jugando en el jardín."
       },
@@ -931,7 +931,7 @@ export const LEVELS: Level[] = [
         explanation: "La negación para 'he' en presente continuo es 'isn't'.",
         translation: "Él no se siente bien, así que se queda en casa."
       }
-    ]
+    ] as Question[],
   },
   {
     id: 'simple-past',
@@ -950,7 +950,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Affirmative',
         sentence: 'We ___ to the cinema yesterday.',
-        options: [{ text: 'go', isCorrect: false }, { text: 'gone', isCorrect: false }, { text: 'went', isCorrect: true }],
+        options: [{ text: 'go', isCorrect: false }, { text: 'gone', isCorrect: false }, { text: 'went', isCorrect: true }, { text: 'were going', isCorrect: false }],
         explanation: "'Went' es la forma en pasado simple del verbo irregular 'go'.",
         translation: "Nosotros fuimos al cine ayer."
       },
@@ -959,7 +959,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Negative',
         sentence: 'She ___ call me last night.',
-        options: [{ text: "didn't", isCorrect: true }, { text: "wasn't", isCorrect: false }, { text: "don't", isCorrect: false }],
+        options: [{ text: "didn't", isCorrect: true }, { text: "wasn't", isCorrect: false }, { text: "don't", isCorrect: false }, { text: "doesn't", isCorrect: false }],
         explanation: "Para negar en pasado simple, se usa el auxiliar 'did not' (didn't) y el verbo principal en su forma base (call).",
         translation: "Ella no me llamó anoche."
       },
@@ -968,7 +968,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Interrogative',
         sentence: '___ you finish your homework?',
-        options: [{ text: 'Do', isCorrect: false }, { text: 'Did', isCorrect: true }, { text: 'Were', isCorrect: false }],
+        options: [{ text: 'Do', isCorrect: false }, { text: 'Did', isCorrect: true }, { text: 'Were', isCorrect: false }, { text: 'Have', isCorrect: false }],
         explanation: "Para preguntar en pasado simple, se usa el auxiliar 'Did' al principio y el verbo en su forma base.",
         translation: "¿Terminaste tu tarea?"
       },
@@ -977,7 +977,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Affirmative',
         sentence: 'I ___ a great movie last night.',
-        options: [{ text: 'watch', isCorrect: false }, { text: 'watched', isCorrect: true }, { text: 'was watching', isCorrect: false }],
+        options: [{ text: 'watch', isCorrect: false }, { text: 'watched', isCorrect: true }, { text: 'was watching', isCorrect: false }, { text: 'have watched', isCorrect: false }],
         explanation: "'Watch' es un verbo regular, por lo que su forma en pasado simple es 'watched' (añadiendo -ed).",
         translation: "Vi una película genial anoche."
       },
@@ -986,7 +986,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Negative',
         sentence: 'They ___ visit the museum.',
-        options: [{ text: "weren't", isCorrect: false }, { text: "don't", isCorrect: false }, { text: "didn't", isCorrect: true }],
+        options: [{ text: "weren't", isCorrect: false }, { text: "don't", isCorrect: false }, { text: "didn't", isCorrect: true }, { text: "haven't", isCorrect: false }],
         explanation: "La negación en pasado simple se forma con 'didn't' + el verbo en su forma base (visit).",
         translation: "Ellos no visitaron el museo."
       },
@@ -995,7 +995,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Interrogative',
         sentence: 'Where ___ you go on vacation?',
-        options: [{ text: 'were', isCorrect: false }, { text: 'did', isCorrect: true }, { text: 'do', isCorrect: false }],
+        options: [{ text: 'were', isCorrect: false }, { text: 'did', isCorrect: true }, { text: 'do', isCorrect: false }, { text: 'have', isCorrect: false }],
         explanation: "Para preguntar en pasado simple, se usa el auxiliar 'did' antes del sujeto.",
         translation: "¿A dónde fuiste de vacaciones?"
       },
@@ -1004,7 +1004,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Affirmative',
         sentence: 'He ___ me the truth.',
-        options: [{ text: 'tell', isCorrect: false }, { text: 'telled', isCorrect: false }, { text: 'told', isCorrect: true }],
+        options: [{ text: 'tell', isCorrect: false }, { text: 'telled', isCorrect: false }, { text: 'told', isCorrect: true }, { text: 'was telling', isCorrect: false }],
         explanation: "'Told' es la forma en pasado simple del verbo irregular 'tell'.",
         translation: "Él me dijo la verdad."
       },
@@ -1013,7 +1013,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Negative',
         sentence: 'I ___ know the answer.',
-        options: [{ text: "wasn't", isCorrect: false }, { text: "didn't", isCorrect: true }, { text: "don't", isCorrect: false }],
+        options: [{ text: "wasn't", isCorrect: false }, { text: "didn't", isCorrect: true }, { text: "don't", isCorrect: false }, { text: "haven't", isCorrect: false }],
         explanation: "Se usa 'didn't' + el verbo en forma base (know) para negar en pasado simple.",
         translation: "Yo no sabía la respuesta."
       },
@@ -1022,7 +1022,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Interrogative',
         sentence: '___ she buy a new car?',
-        options: [{ text: 'Does', isCorrect: false }, { text: 'Was', isCorrect: false }, { text: 'Did', isCorrect: true }],
+        options: [{ text: 'Does', isCorrect: false }, { text: 'Was', isCorrect: false }, { text: 'Did', isCorrect: true }, { text: 'Has', isCorrect: false }],
         explanation: "Las preguntas en pasado simple empiezan con 'Did', y el verbo principal va en su forma base (buy).",
         translation: "¿Compró ella un coche nuevo?"
       },
@@ -1031,7 +1031,7 @@ export const LEVELS: Level[] = [
         type: QuestionType.FILL_IN_THE_BLANK,
         form: 'Affirmative',
         sentence: 'We ___ to music for hours.',
-        options: [{ text: 'listened', isCorrect: true }, { text: 'listen', isCorrect: false }, { text: 'were listening', isCorrect: false }],
+        options: [{ text: 'listened', isCorrect: true }, { text: 'listen', isCorrect: false }, { text: 'were listening', isCorrect: false }, { text: 'did listen', isCorrect: false }],
         explanation: "El pasado del verbo regular 'listen' es 'listened'.",
         translation: "Escuchamos música durante horas."
       },
@@ -1396,7 +1396,7 @@ export const LEVELS: Level[] = [
         explanation: "Para negar con 'she' en pasado, se usa 'didn't' y el verbo en su forma base (know).",
         translation: "Ella no supo qué decir."
       }
-    ],
+    ] as Question[],
   },
   {
     id: 'present-perfect',
@@ -1415,7 +1415,7 @@ export const LEVELS: Level[] = [
             type: QuestionType.FILL_IN_THE_BLANK,
             form: 'Affirmative',
             sentence: 'I have ___ to London twice.',
-            options: [{ text: 'be', isCorrect: false }, { text: 'been', isCorrect: true }, { text: 'was', isCorrect: false }],
+            options: [{ text: 'be', isCorrect: false }, { text: 'been', isCorrect: true }, { text: 'was', isCorrect: false }, { text: 'went', isCorrect: false }],
             explanation: "El presente perfecto se forma con 'have/has' + el participio pasado del verbo. 'Been' es el participio de 'be'.",
             translation: "He estado en Londres dos veces."
         },
@@ -1424,7 +1424,7 @@ export const LEVELS: Level[] = [
             type: QuestionType.FILL_IN_THE_BLANK,
             form: 'Negative',
             sentence: 'She has not ___ feeling well recently.',
-            options: [{ text: 'be', isCorrect: false }, { text: 'was', isCorrect: false }, { text: 'been', isCorrect: true }],
+            options: [{ text: 'be', isCorrect: false }, { text: 'was', isCorrect: false }, { text: 'been', isCorrect: true }, { text: 'being', isCorrect: false }],
             explanation: "Para negar, se añade 'not' después de 'have/has'. Se sigue usando el participio pasado 'been'.",
             translation: "Ella no se ha sentido bien recientemente."
         },
@@ -1433,7 +1433,7 @@ export const LEVELS: Level[] = [
             type: QuestionType.FILL_IN_THE_BLANK,
             form: 'Interrogative',
             sentence: '___ you ever been to Japan?',
-            options: [{ text: 'Have', isCorrect: true }, { text: 'Did', isCorrect: false }, { text: 'Are', isCorrect: false }],
+            options: [{ text: 'Have', isCorrect: true }, { text: 'Did', isCorrect: false }, { text: 'Are', isCorrect: false }, { text: 'Do', isCorrect: false }],
             explanation: "Para preguntar, se coloca 'Have/Has' al principio de la oración, antes del sujeto.",
             translation: "¿Alguna vez has estado en Japón?"
         },
@@ -1442,7 +1442,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Affirmative',
           sentence: 'They have ___ their homework.',
-          options: [{ text: 'finish', isCorrect: false }, { text: 'finishing', isCorrect: false }, { text: 'finished', isCorrect: true }],
+          options: [{ text: 'finish', isCorrect: false }, { text: 'finishing', isCorrect: false }, { text: 'finished', isCorrect: true }, { text: 'did finish', isCorrect: false }],
           explanation: "El presente perfecto usa 'have' + el participio pasado del verbo. El participio de 'finish' es 'finished'.",
           translation: "Ellos han terminado su tarea."
         },
@@ -1451,7 +1451,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Negative',
           sentence: 'He ___ eaten breakfast yet.',
-          options: [{ text: "didn't", isCorrect: false }, { text: "hasn't", isCorrect: true }, { text: "isn't", isCorrect: false }],
+          options: [{ text: "didn't", isCorrect: false }, { text: "hasn't", isCorrect: true }, { text: "isn't", isCorrect: false }, { text: "don't", isCorrect: false }],
           explanation: "La negación para 'he' en presente perfecto es 'has not' o 'hasn't'.",
           translation: "Él no ha desayunado todavía."
         },
@@ -1460,7 +1460,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Interrogative',
           sentence: '___ she ever traveled abroad?',
-          options: [{ text: 'Did', isCorrect: false }, { text: 'Is', isCorrect: false }, { text: 'Has', isCorrect: true }],
+          options: [{ text: 'Did', isCorrect: false }, { text: 'Is', isCorrect: false }, { text: 'Has', isCorrect: true }, { text: 'Does', isCorrect: false }],
           explanation: "Las preguntas con 'she' en presente perfecto comienzan con 'Has'.",
           translation: "¿Ha viajado ella al extranjero alguna vez?"
         },
@@ -1469,7 +1469,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Affirmative',
           sentence: 'I have ___ this book before.',
-          options: [{ text: 'readed', isCorrect: false }, { text: 'reading', isCorrect: false }, { text: 'read', isCorrect: true }],
+          options: [{ text: 'readed', isCorrect: false }, { text: 'reading', isCorrect: false }, { text: 'read', isCorrect: true }, { text: 'red', isCorrect: false }],
           explanation: "El participio pasado del verbo irregular 'read' se escribe igual, 'read', pero se pronuncia diferente.",
           translation: "He leído este libro antes."
         },
@@ -1478,7 +1478,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Negative',
           sentence: 'We ___ seen that movie.',
-          options: [{ text: "didn't", isCorrect: false }, { text: "haven't", isCorrect: true }, { text: "aren't", isCorrect: false }],
+          options: [{ text: "didn't", isCorrect: false }, { text: "haven't", isCorrect: true }, { text: "aren't", isCorrect: false }, { text: "weren't", isCorrect: false }],
           explanation: "La negación para 'we' en presente perfecto es 'have not' o 'haven't'.",
           translation: "No hemos visto esa película."
         },
@@ -1487,7 +1487,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Interrogative',
           sentence: 'How long ___ you lived here?',
-          options: [{ text: 'did', isCorrect: false }, { text: 'are', isCorrect: false }, { text: 'have', isCorrect: true }],
+          options: [{ text: 'did', isCorrect: false }, { text: 'are', isCorrect: false }, { text: 'have', isCorrect: true }, { text: 'do', isCorrect: false }],
           explanation: "Para preguntar por duración hasta el presente, se usa 'have' en la estructura del presente perfecto.",
           translation: "¿Cuánto tiempo has vivido aquí?"
         },
@@ -1496,7 +1496,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Affirmative',
           sentence: 'It has ___ a lot this week.',
-          options: [{ text: 'rained', isCorrect: true }, { text: 'rain', isCorrect: false }, { text: 'raining', isCorrect: false }],
+          options: [{ text: 'rained', isCorrect: true }, { text: 'rain', isCorrect: false }, { text: 'raining', isCorrect: false }, { text: 'did rain', isCorrect: false }],
           explanation: "Se usa 'has' + el participio pasado 'rained' para describir una acción que ocurrió durante un periodo que llega hasta el presente.",
           translation: "Ha llovido mucho esta semana."
         },
@@ -1861,7 +1861,7 @@ export const LEVELS: Level[] = [
             explanation: "La negación para 'they' es 'haven't'.",
             translation: "No han terminado la carrera."
         }
-    ],
+    ] as Question[],
   },
   {
     id: 'comparatives-superlatives',
@@ -1880,8 +1880,8 @@ export const LEVELS: Level[] = [
             type: QuestionType.FILL_IN_THE_BLANK,
             form: 'Affirmative',
             sentence: 'This car is ___ than that one.',
-            options: [{ text: 'faster', isCorrect: true }, { text: 'fastest', isCorrect: false }, { text: 'fast', isCorrect: false }],
-            explanation: "Para comparar dos cosas, se usa el adjetivo comparativo (con -er para adjetivos cortos).",
+            options: [{ text: 'faster', isCorrect: true }, { text: 'fastest', isCorrect: false }, { text: 'fast', isCorrect: false }, { text: 'more fast', isCorrect: false }],
+            explanation: "Para comparar dos cosas, se usa el adjetivo comparativo (con -er para adjetivos cortos). 'more fast' es un error común.",
             translation: "Este coche es más rápido que ese."
         },
         {
@@ -1889,7 +1889,7 @@ export const LEVELS: Level[] = [
             type: QuestionType.FILL_IN_THE_BLANK,
             form: 'Affirmative',
             sentence: 'She is the ___ person in our class.',
-            options: [{ text: 'more intelligent', isCorrect: false }, { text: 'intelligent', isCorrect: false }, { text: 'most intelligent', isCorrect: true }],
+            options: [{ text: 'more intelligent', isCorrect: false }, { text: 'intelligent', isCorrect: false }, { text: 'most intelligent', isCorrect: true }, { text: 'intelligenter', isCorrect: false }],
             explanation: "Para superlativos con adjetivos largos, se usa 'the most' antes del adjetivo.",
             translation: "Ella es la persona más inteligente de nuestra clase."
         },
@@ -1898,7 +1898,7 @@ export const LEVELS: Level[] = [
             type: QuestionType.FILL_IN_THE_BLANK,
             form: 'Affirmative',
             sentence: 'Mount Everest is the ___ mountain in the world.',
-            options: [{ text: 'high', isCorrect: false }, { text: 'higher', isCorrect: false }, { text: 'highest', isCorrect: true }],
+            options: [{ text: 'high', isCorrect: false }, { text: 'higher', isCorrect: false }, { text: 'highest', isCorrect: true }, { text: 'most high', isCorrect: false }],
             explanation: "Para destacar una cualidad sobre todas las demás, se usa el superlativo (con -est para adjetivos cortos).",
             translation: "El Monte Everest es la montaña más alta del mundo."
         },
@@ -1907,7 +1907,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Affirmative',
           sentence: 'My sister is ___ than me.',
-          options: [{ text: 'tallest', isCorrect: false }, { text: 'taller', isCorrect: true }, { text: 'tall', isCorrect: false }],
+          options: [{ text: 'tallest', isCorrect: false }, { text: 'taller', isCorrect: true }, { text: 'tall', isCorrect: false }, { text: 'more tall', isCorrect: false }],
           explanation: "Para comparar dos personas con un adjetivo corto como 'tall', se añade '-er' para formar el comparativo.",
           translation: "Mi hermana es más alta que yo."
         },
@@ -1916,7 +1916,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Affirmative',
           sentence: 'This is the ___ movie I have ever seen.',
-          options: [{ text: 'worse', isCorrect: false }, { text: 'badder', isCorrect: false }, { text: 'worst', isCorrect: true }],
+          options: [{ text: 'worse', isCorrect: false }, { text: 'badder', isCorrect: false }, { text: 'worst', isCorrect: true }, { text: 'most bad', isCorrect: false }],
           explanation: "'Worst' es el superlativo irregular del adjetivo 'bad'. Se usa para indicar el grado máximo.",
           translation: "Esta es la peor película que he visto."
         },
@@ -1925,7 +1925,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Affirmative',
           sentence: 'This exercise is ___ than the last one.',
-          options: [{ text: 'most difficult', isCorrect: false }, { text: 'more difficult', isCorrect: true }, { text: 'difficult', isCorrect: false }],
+          options: [{ text: 'most difficult', isCorrect: false }, { text: 'more difficult', isCorrect: true }, { text: 'difficult', isCorrect: false }, { text: 'difficulter', isCorrect: false }],
           explanation: "Para adjetivos largos como 'difficult', se usa 'more' para formar el comparativo.",
           translation: "Este ejercicio es más difícil que el anterior."
         },
@@ -1934,7 +1934,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Affirmative',
           sentence: 'He is the ___ student in the school.',
-          options: [{ text: 'goodest', isCorrect: false }, { text: 'better', isCorrect: false }, { text: 'best', isCorrect: true }],
+          options: [{ text: 'goodest', isCorrect: false }, { text: 'better', isCorrect: false }, { text: 'best', isCorrect: true }, { text: 'most good', isCorrect: false }],
           explanation: "'Best' es el superlativo irregular de 'good'. Se usa para destacar a alguien sobre el resto.",
           translation: "Él es el mejor estudiante de la escuela."
         },
@@ -1943,7 +1943,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Affirmative',
           sentence: 'A lion is ___ than a cat.',
-          options: [{ text: 'big', isCorrect: false }, { text: 'biggest', isCorrect: false }, { text: 'bigger', isCorrect: true }],
+          options: [{ text: 'big', isCorrect: false }, { text: 'biggest', isCorrect: false }, { text: 'bigger', isCorrect: true }, { text: 'more big', isCorrect: false }],
           explanation: "Para adjetivos cortos de una sílaba terminados en consonante-vocal-consonante, se duplica la última consonante y se añade '-er'.",
           translation: "Un león es más grande que un gato."
         },
@@ -1952,7 +1952,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Affirmative',
           sentence: 'It was the ___ day of my life.',
-          options: [{ text: 'happier', isCorrect: false }, { text: 'happy', isCorrect: false }, { text: 'happiest', isCorrect: true }],
+          options: [{ text: 'happier', isCorrect: false }, { text: 'happy', isCorrect: false }, { text: 'happiest', isCorrect: true }, { text: 'most happy', isCorrect: false }],
           explanation: "Para adjetivos de dos sílabas terminados en '-y', se cambia la 'y' por 'i' y se añade '-est' para el superlativo.",
           translation: "Fue el día más feliz de mi vida."
         },
@@ -1961,7 +1961,7 @@ export const LEVELS: Level[] = [
           type: QuestionType.FILL_IN_THE_BLANK,
           form: 'Affirmative',
           sentence: 'Your explanation is ___ than mine.',
-          options: [{ text: 'clear', isCorrect: false }, { text: 'clearer', isCorrect: true }, { text: 'clearest', isCorrect: false }],
+          options: [{ text: 'clear', isCorrect: false }, { text: 'clearer', isCorrect: true }, { text: 'clearest', isCorrect: false }, { text: 'more clear', isCorrect: false }],
           explanation: "Se añade '-er' al adjetivo corto 'clear' para formar el comparativo.",
           translation: "Tu explicación es más clara que la mía."
         },
@@ -2326,7 +2326,7 @@ export const LEVELS: Level[] = [
           explanation: "Para el adjetivo corto 'cold', se añade -er para el comparativo.",
           translation: "Este invierno es más frío que el invierno pasado."
         }
-    ]
+    ] as Question[],
   },
   {
     id: 'forming-questions',
@@ -2339,259 +2339,320 @@ export const LEVELS: Level[] = [
       interrogative: 'Subject Q: Who/What + Verbo?',
     },
     questions: [
-        {
-            id: 'fq1',
-            type: QuestionType.MULTIPLE_CHOICE,
-            form: 'Interrogative',
-            sentence: 'Statement: She works in a hospital. -> Ask where.',
-            options: [
-                { text: 'Where does she work?', isCorrect: true },
-                { text: 'Where she works?', isCorrect: false },
-                { text: 'Does she work where?', isCorrect: false },
-            ],
-            explanation: "Para preguntar con 'she' en presente simple, se usa 'Does' después de la palabra interrogativa (Where) y antes del sujeto.",
-            translation: "Declaración: Ella trabaja en un hospital. -> Pregunta dónde. -> ¿Dónde trabaja ella?"
-        },
-        {
-            id: 'fq2',
-            type: QuestionType.MULTIPLE_CHOICE,
-            form: 'Interrogative',
-            sentence: 'Statement: They went to the party. -> Ask if they went.',
-            options: [
-                { text: 'Did they go to the party?', isCorrect: true },
-                { text: 'They did go to the party?', isCorrect: false },
-                { text: 'Went they to the party?', isCorrect: false },
-            ],
-            explanation: "Para preguntas de sí/no en pasado simple, se usa 'Did' al principio, seguido del sujeto y el verbo en forma base.",
-            translation: "Declaración: Fueron a la fiesta. -> Pregunta si fueron. -> ¿Fueron ellos a la fiesta?"
-        },
-        {
-            id: 'fq3',
-            type: QuestionType.MULTIPLE_CHOICE,
-            form: 'Interrogative',
-            sentence: 'Statement: He is watching a movie. -> Ask what he is doing.',
-            options: [
-                { text: 'What is he watching?', isCorrect: true },
-                { text: 'What he is watching?', isCorrect: false },
-                { text: 'Is he watching what?', isCorrect: false },
-            ],
-            explanation: "En presente continuo, la estructura es: Palabra Interrogativa + is/are + sujeto + verbo-ing.",
-            translation: "Declaración: Él está viendo una película. -> Pregunta qué está viendo. -> ¿Qué está viendo él?"
-        },
-        {
-            id: 'fq4',
-            type: QuestionType.MULTIPLE_CHOICE,
-            form: 'Interrogative',
-            sentence: 'Statement: You have been to Paris. -> Ask if the person has been there.',
-            options: [
-                { text: 'Have you been to Paris?', isCorrect: true },
-                { text: 'You have been to Paris?', isCorrect: false },
-                { text: 'Did you been to Paris?', isCorrect: false },
-            ],
-            explanation: "Para preguntas de sí/no en presente perfecto, se invierte el sujeto y 'have/has'.",
-            translation: "Declaración: Has estado en París. -> Pregunta si ha estado allí. -> ¿Has estado en París?"
-        },
-        {
-            id: 'fq5',
-            type: QuestionType.MULTIPLE_CHOICE,
-            form: 'Interrogative',
-            sentence: 'Statement: The meeting starts at 9 AM. -> Ask what time.',
-            options: [
-                { text: 'What time does the meeting start?', isCorrect: true },
-                { text: 'What time the meeting starts?', isCorrect: false },
-                { text: 'Does the meeting start what time?', isCorrect: false },
-            ],
-            explanation: "Se usa 'does' para 'the meeting' (it) en presente simple, después de la frase interrogativa.",
-            translation: "Declaración: La reunión empieza a las 9 AM. -> Pregunta a qué hora. -> ¿A qué hora empieza la reunión?"
-        },
-        // 45 more questions
-        ...Array.from({ length: 45 }, (_, i) => {
-          const questions = [
-            // Simple Present
-            // FIX: Add missing 'type' and 'form' properties to Question object.
-            { id: 'fq6', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: They live in Canada. -> Ask where.', options: [{ text: 'Where do they live?', isCorrect: true }, { text: 'Where they live?', isCorrect: false }, { text: 'Do they live where?', isCorrect: false }], explanation: "Se usa 'do' con 'they' en preguntas de presente simple.", translation: "¿Dónde viven ellos?" },
-            { id: 'fq7', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: He likes pizza. -> Ask if he likes it.', options: [{ text: 'Does he like pizza?', isCorrect: true }, { text: 'Do he like pizza?', isCorrect: false }, { text: 'He does like pizza?', isCorrect: false }], explanation: "Se usa 'Does' para preguntas de sí/no con 'he' en presente simple.", translation: "¿A él le gusta la pizza?" },
-            // Simple Past
-            { id: 'fq8', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: She bought a new car. -> Ask what she bought.', options: [{ text: 'What did she buy?', isCorrect: true }, { text: 'What she bought?', isCorrect: false }, { text: 'Did she buy what?', isCorrect: false }], explanation: "En pasado simple, la estructura es QW + did + sujeto + verbo base.", translation: "¿Qué compró ella?" },
-            { id: 'fq9', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: I saw John yesterday. -> Ask who the person saw.', options: [{ text: 'Who did you see yesterday?', isCorrect: true }, { text: 'Who you saw yesterday?', isCorrect: false }, { text: 'Did you see who yesterday?', isCorrect: false }], explanation: "Se usa 'did' para preguntar sobre el objeto de la acción en pasado.", translation: "¿A quién viste ayer?" },
-            // Present Continuous
-            { id: 'fq10', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: We are going to the beach. -> Ask where we are going.', options: [{ text: 'Where are we going?', isCorrect: true }, { text: 'Where we are going?', isCorrect: false }, { text: 'Are we going where?', isCorrect: false }], explanation: "La estructura es QW + are + sujeto + verbo-ing.", translation: "¿A dónde vamos?" },
-            { id: 'fq11', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: It is raining. -> Ask if it is raining.', options: [{ text: 'Is it raining?', isCorrect: true }, { text: 'It is raining?', isCorrect: false }, { text: 'Does it raining?', isCorrect: false }], explanation: "Para preguntas de sí/no, se invierte el sujeto y el verbo 'to be'.", translation: "¿Está lloviendo?" },
-            // Present Perfect
-            { id: 'fq12', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: He has finished his work. -> Ask if he has finished.', options: [{ text: 'Has he finished his work?', isCorrect: true }, { text: 'He has finished his work?', isCorrect: false }, { text: 'Did he finished his work?', isCorrect: false }], explanation: "Se invierte 'has' y el sujeto para preguntas de sí/no en presente perfecto.", translation: "¿Ha terminado él su trabajo?" },
-            { id: 'fq13', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: They have lived here for five years. -> Ask how long.', options: [{ text: 'How long have they lived here?', isCorrect: true }, { text: 'How long they have lived here?', isCorrect: false }, { text: 'Have they lived here how long?', isCorrect: false }], explanation: "La estructura es QW + have + sujeto + participio.", translation: "¿Cuánto tiempo han vivido aquí?" },
-            // Mixed
-            { id: 'fq14', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: The train arrived at 10 PM. -> Ask when.', options: [{ text: 'When did the train arrive?', isCorrect: true }, { text: 'When the train arrived?', isCorrect: false }, { text: 'Did the train arrive when?', isCorrect: false }], explanation: "Pregunta en pasado simple sobre el tiempo. Se usa 'did'.", translation: "¿Cuándo llegó el tren?" },
-            { id: 'fq15', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: She is crying because she is sad. -> Ask why.', options: [{ text: 'Why is she crying?', isCorrect: true }, { text: 'Why she is crying?', isCorrect: false }, { text: 'Is she crying why?', isCorrect: false }], explanation: "Pregunta en presente continuo sobre la razón.", translation: "¿Por qué está llorando?" },
-            { id: 'fq16', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: Someone broke the window. -> Ask who.', options: [{ text: 'Who broke the window?', isCorrect: true }, { text: 'Who did break the window?', isCorrect: false }, { text: 'Did who break the window?', isCorrect: false }], explanation: "Cuando 'Who' es el sujeto, no se usa 'did'. El verbo va en pasado.", translation: "¿Quién rompió la ventana?" },
-            { id: 'fq17', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: I need some help. -> Ask what the person needs.', options: [{ text: 'What do you need?', isCorrect: true }, { text: 'What you need?', isCorrect: false }, { text: 'Do you need what?', isCorrect: false }], explanation: "Pregunta en presente simple sobre el objeto. Se usa 'do'.", translation: "¿Qué necesitas?" },
-            { id: 'fq18', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: They have visited Italy. -> Ask which country.', options: [{ text: 'Which country have they visited?', isCorrect: true }, { text: 'Which country they have visited?', isCorrect: false }, { text: 'Have they visited which country?', isCorrect: false }], explanation: "Pregunta en presente perfecto. 'Which country' actúa como la palabra interrogativa.", translation: "¿Qué país han visitado?" },
-            { id: 'fq19', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: The concert was amazing. -> Ask how it was.', options: [{ text: 'How was the concert?', isCorrect: true }, { text: 'How the concert was?', isCorrect: false }, { text: 'Was the concert how?', isCorrect: false }], explanation: "Pregunta en pasado simple con el verbo 'to be'. Se invierte el sujeto y el verbo.", translation: "¿Cómo estuvo el concierto?" },
-            { id: 'fq20', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: He can speak three languages. -> Ask how many.', options: [{ text: 'How many languages can he speak?', isCorrect: true }, { text: 'How many languages he can speak?', isCorrect: false }, { text: 'Can he speak how many languages?', isCorrect: false }], explanation: "Con verbos modales como 'can', se invierte el sujeto y el modal.", translation: "¿Cuántos idiomas puede hablar?" },
-            { id: 'fq21', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: I am from Spain. -> Ask where from.', options: [{ text: 'Where are you from?', isCorrect: true }, { text: 'Where you are from?', isCorrect: false }, { text: 'Are you from where?', isCorrect: false }], explanation: "Pregunta común con el verbo 'to be'.", translation: "¿De dónde eres?" },
-            { id: 'fq22', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: She studied for three hours. -> Ask how long.', options: [{ text: 'How long did she study?', isCorrect: true }, { text: 'How long she studied?', isCorrect: false }, { text: 'Did she study how long?', isCorrect: false }], explanation: "Pregunta en pasado simple sobre duración. Se usa 'did'.", translation: "¿Cuánto tiempo estudió ella?" },
-            { id: 'fq23', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: They will arrive tomorrow. -> Ask when.', options: [{ text: 'When will they arrive?', isCorrect: true }, { text: 'When they will arrive?', isCorrect: false }, { text: 'Will they arrive when?', isCorrect: false }], explanation: "Con el futuro 'will', se invierte el sujeto y 'will'.", translation: "¿Cuándo llegarán?" },
-            { id: 'fq24', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: He has a dog. -> Ask if he has a dog.', options: [{ text: 'Does he have a dog?', isCorrect: true }, { text: 'Has he a dog?', isCorrect: false }, { text: 'Do he have a dog?', isCorrect: false }], explanation: "Para preguntar por posesión en presente, se usa 'Does... have'.", translation: "¿Tiene él un perro?" },
-            { id: 'fq25', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: She feels tired. -> Ask how she feels.', options: [{ text: 'How does she feel?', isCorrect: true }, { text: 'How she feels?', isCorrect: false }, { text: 'Does she feel how?', isCorrect: false }], explanation: "Pregunta en presente simple sobre estado. Se usa 'does'.", translation: "¿Cómo se siente ella?" },
-            { id: 'fq26', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: They were sleeping at 10 PM. -> Ask what they were doing.', options: [{ text: 'What were they doing at 10 PM?', isCorrect: true }, { text: 'What they were doing at 10 PM?', isCorrect: false }, { text: 'Were they doing what at 10 PM?', isCorrect: false }], explanation: "Pregunta en pasado continuo. QW + was/were + sujeto + verbo-ing.", translation: "¿Qué estaban haciendo a las 10 PM?" },
-            { id: 'fq27', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: It costs $50. -> Ask how much.', options: [{ text: 'How much does it cost?', isCorrect: true }, { text: 'How much it costs?', isCorrect: false }, { text: 'Does it cost how much?', isCorrect: false }], explanation: "Pregunta de precio en presente simple. Se usa 'does'.", translation: "¿Cuánto cuesta?" },
-            { id: 'fq28', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: He has never seen a ghost. -> Ask if he has ever seen one.', options: [{ text: 'Has he ever seen a ghost?', isCorrect: true }, { text: 'He has ever seen a ghost?', isCorrect: false }, { text: 'Did he ever see a ghost?', isCorrect: false }], explanation: "'Ever' se usa en preguntas de presente perfecto sobre experiencias.", translation: "¿Ha visto alguna vez un fantasma?" },
-            { id: 'fq29', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: The children are playing in the park. -> Ask where.', options: [{ text: 'Where are the children playing?', isCorrect: true }, { text: 'Where the children are playing?', isCorrect: false }, { text: 'Are the children playing where?', isCorrect: false }], explanation: "Pregunta en presente continuo sobre lugar.", translation: "¿Dónde están jugando los niños?" },
-            { id: 'fq30', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: I woke up at 7 AM. -> Ask what time.', options: [{ text: 'What time did you wake up?', isCorrect: true }, { text: 'What time you woke up?', isCorrect: false }, { text: 'Did you wake up what time?', isCorrect: false }], explanation: "Pregunta en pasado simple sobre la hora. Se usa 'did'.", translation: "¿A qué hora te despertaste?" },
-            { id: 'fq31', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: She is a doctor. -> Ask her job.', options: [{ text: 'What does she do?', isCorrect: true }, { text: 'What is she do?', isCorrect: false }, { text: 'What is her job?', isCorrect: true }], explanation: "Ambas 'What does she do?' y 'What is her job?' son correctas para preguntar por la profesión.", translation: "¿A qué se dedica ella? / ¿Cuál es su trabajo?" },
-            { id: 'fq32', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: They did not come to the party. -> Ask why.', options: [{ text: "Why didn't they come to the party?", isCorrect: true }, { text: 'Why they did not come to the party?', isCorrect: false }, { text: "Didn't they come why?", isCorrect: false }], explanation: "Pregunta negativa en pasado simple.", translation: "¿Por qué no vinieron a la fiesta?" },
-            { id: 'fq33', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: The keys are on the table. -> Ask where.', options: [{ text: 'Where are the keys?', isCorrect: true }, { text: 'Where the keys are?', isCorrect: false }, { text: 'Are the keys where?', isCorrect: false }], explanation: "Pregunta de lugar con el verbo 'to be' en presente.", translation: "¿Dónde están las llaves?" },
-            { id: 'fq34', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: He was born in 1990. -> Ask when.', options: [{ text: 'When was he born?', isCorrect: true }, { text: 'When he was born?', isCorrect: false }, { text: 'Was he born when?', isCorrect: false }], explanation: "Pregunta sobre fecha de nacimiento con el verbo 'to be' en pasado.", translation: "¿Cuándo nació él?" },
-            { id: 'fq35', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: She will call you later. -> Ask if she will call.', options: [{ text: 'Will she call me later?', isCorrect: true }, { text: 'She will call me later?', isCorrect: false }, { text: 'Does she will call me later?', isCorrect: false }], explanation: "Pregunta de sí/no con el futuro 'will'.", translation: "¿Me llamará más tarde?" },
-            { id: 'fq36', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: We are studying English. -> Ask what.', options: [{ text: 'What are you studying?', isCorrect: true }, { text: 'What you are studying?', isCorrect: false }, { text: 'Are you studying what?', isCorrect: false }], explanation: "Pregunta en presente continuo sobre la materia de estudio.", translation: "¿Qué estáis estudiando?" },
-            { id: 'fq37', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: The movie was not very good. -> Ask if it was good.', options: [{ text: 'Was the movie good?', isCorrect: true }, { text: 'Did the movie good?', isCorrect: false }, { text: 'The movie was good?', isCorrect: false }], explanation: "Pregunta de sí/no con el verbo 'to be' en pasado.", translation: "¿Estuvo buena la película?" },
-            { id: 'fq38', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: I have two brothers. -> Ask how many.', options: [{ text: 'How many brothers do you have?', isCorrect: true }, { text: 'How many brothers you have?', isCorrect: false }, { text: 'Do you have how many brothers?', isCorrect: false }], explanation: "Pregunta sobre cantidad y posesión. Se usa 'do... have'.", translation: "¿Cuántos hermanos tienes?" },
-            { id: 'fq39', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: They have been working since 9 AM. -> Ask how long.', options: [{ text: 'How long have they been working?', isCorrect: true }, { text: 'How long they have been working?', isCorrect: false }, { text: 'Have they been working how long?', isCorrect: false }], explanation: "Pregunta en presente perfecto continuo sobre duración.", translation: "¿Cuánto tiempo llevan trabajando?" },
-            { id: 'fq40', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: She visits her grandma every week. -> Ask how often.', options: [{ text: 'How often does she visit her grandma?', isCorrect: true }, { text: 'How often she visits her grandma?', isCorrect: false }, { text: 'Does she visit her grandma how often?', isCorrect: false }], explanation: "Pregunta sobre frecuencia en presente simple.", translation: "¿Con qué frecuencia visita a su abuela?" },
-            { id: 'fq41', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: He is taller than his brother. -> Ask if he is taller.', options: [{ text: 'Is he taller than his brother?', isCorrect: true }, { text: 'He is taller than his brother?', isCorrect: false }, { text: 'Does he is taller than his brother?', isCorrect: false }], explanation: "Pregunta de sí/no con adjetivo comparativo y verbo 'to be'.", translation: "¿Es él más alto que su hermano?" },
-            { id: 'fq42', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: We finished the project. -> Ask if we finished it.', options: [{ text: 'Did we finish the project?', isCorrect: true }, { text: 'We did finish the project?', isCorrect: false }, { text: 'Finished we the project?', isCorrect: false }], explanation: "Pregunta de sí/no en pasado simple.", translation: "¿Terminamos el proyecto?" },
-            { id: 'fq43', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: The sun rises in the east. -> Ask where.', options: [{ text: 'Where does the sun rise?', isCorrect: true }, { text: 'Where the sun rises?', isCorrect: false }, { text: 'Does the sun rise where?', isCorrect: false }], explanation: "Pregunta sobre un hecho general en presente simple.", translation: "¿Por dónde sale el sol?" },
-            { id: 'fq44', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: I did not understand the lesson. -> Ask why.', options: [{ text: "Why didn't you understand the lesson?", isCorrect: true }, { text: 'Why you did not understand the lesson?', isCorrect: false }, { text: "Didn't you understand why?", isCorrect: false }], explanation: "Pregunta negativa en pasado simple.", translation: "¿Por qué no entendiste la lección?" },
-            { id: 'fq45', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: They are going to travel to Japan. -> Ask where.', options: [{ text: 'Where are they going to travel?', isCorrect: true }, { text: 'Where they are going to travel?', isCorrect: false }, { text: 'Are they going to travel where?', isCorrect: false }], explanation: "Pregunta con 'be going to' para planes futuros.", translation: "¿A dónde van a viajar?" },
-            { id: 'fq46', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: This book belongs to Sarah. -> Ask who.', options: [{ text: 'Who does this book belong to?', isCorrect: true }, { text: 'Who this book belongs to?', isCorrect: false }, { text: 'Does this book belong to who?', isCorrect: false }], explanation: "Pregunta sobre posesión con el verbo 'belong'.", translation: "¿A quién pertenece este libro?" },
-            { id: 'fq47', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: She has lost her keys. -> Ask what.', options: [{ text: 'What has she lost?', isCorrect: true }, { text: 'What she has lost?', isCorrect: false }, { text: 'Has she lost what?', isCorrect: false }], explanation: "Pregunta en presente perfecto sobre el objeto.", translation: "¿Qué ha perdido ella?" },
-            { id: 'fq48', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: The flight was delayed. -> Ask why.', options: [{ text: 'Why was the flight delayed?', isCorrect: true }, { text: 'Why the flight was delayed?', isCorrect: false }, { text: 'Was the flight delayed why?', isCorrect: false }], explanation: "Pregunta en voz pasiva en pasado simple.", translation: "¿Por qué se retrasó el vuelo?" },
-            { id: 'fq49', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: I am learning to play the guitar. -> Ask what.', options: [{ text: 'What are you learning to play?', isCorrect: true }, { text: 'What you are learning to play?', isCorrect: false }, { text: 'Are you learning what to play?', isCorrect: false }], explanation: "Pregunta en presente continuo.", translation: "¿Qué estás aprendiendo a tocar?" },
-            { id: 'fq50', type: QuestionType.MULTIPLE_CHOICE, form: 'Interrogative', sentence: 'Statement: He had a great time. -> Ask if he had a good time.', options: [{ text: 'Did he have a good time?', isCorrect: true }, { text: 'Had he a good time?', isCorrect: false }, { text: 'Did he had a good time?', isCorrect: false }], explanation: "Pregunta en pasado simple con el verbo 'have'. Se usa 'did' y 'have' en su forma base.", translation: "¿Lo pasó bien?" },
-          ];
-          return questions[i % questions.length];
-        }).map((q, i) => ({ ...q, id: `fq${i + 6}` }))
-    ],
+        { id: 'fq1', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "She works in a big office.", sentenceParts: ["Where", "she", "?"], answerBlocks: ["work", "do", "does", "is", "works"], correctOrder: ["does", "work"], hints: ["Auxiliar", "Verbo"], explanation: "Para preguntar sobre el lugar de trabajo de 'ella' (she) en presente simple, usamos: Where + does + she + work?", translation: "Contexto: 'Ella trabaja en una oficina grande.' Pregunta: '¿Dónde trabaja ella?'" },
+        { id: 'fq2', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "They like pizza.", sentenceParts: ["", "they like pizza?"], answerBlocks: ["Does", "Do", "Are", "Is"], correctOrder: ["Do"], hints: ["Auxiliar"], explanation: "Para confirmar información en presente simple con 'they', la pregunta empieza con 'Do'.", translation: "Contexto: 'A ellos les gusta la pizza.' Pregunta: '¿A ellos les gusta la pizza?'" },
+        { id: 'fq3', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "The train leaves at 8 PM.", sentenceParts: ["What time", "the train", "?"], answerBlocks: ["leave", "is", "does", "leaves", "do"], correctOrder: ["does", "leave"], hints: ["Auxiliar", "Verbo"], explanation: "Para preguntar la hora de un evento con 'the train' (it), se usa 'does'.", translation: "Contexto: 'El tren sale a las 8 PM.' Pregunta: '¿A qué hora sale el tren?'" },
+        { id: 'fq4', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "He is singing a song.", sentenceParts: ["What", "he", "?"], answerBlocks: ["is", "doing", "are", "does", "sings"], correctOrder: ["is", "doing"], hints: ["Verbo to be", "Verbo -ing"], explanation: "Para preguntar sobre la acción de alguien en presente continuo, usamos 'What + is + he + doing?'", translation: "Contexto: 'Él está cantando una canción.' Pregunta: '¿Qué está haciendo él?'" },
+        { id: 'fq5', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "They are going to the park.", sentenceParts: ["Where", "they", "?"], answerBlocks: ["go", "are", "is", "going", "do"], correctOrder: ["are", "going"], hints: ["Verbo to be", "Verbo -ing"], explanation: "Para preguntar el destino en presente continuo, se usa: Where + are + they + going?", translation: "Contexto: 'Ellos van al parque.' Pregunta: '¿A dónde van?'" },
+        { id: 'fq6', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "She went to the cinema yesterday.", sentenceParts: ["", "she go to the cinema?"], answerBlocks: ["Did", "Was", "Does", "Is"], correctOrder: ["Did"], hints: ["Auxiliar"], explanation: "Para preguntar si una acción ocurrió en el pasado, se usa 'Did' y el verbo en forma base ('go').", translation: "Contexto: 'Ella fue al cine ayer.' Pregunta: '¿Fue ella al cine?'" },
+        { id: 'fq7', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "He bought a new car.", sentenceParts: ["What", "he", "?"], answerBlocks: ["was", "did", "buy", "bought", "does"], correctOrder: ["did", "buy"], hints: ["Auxiliar", "Verbo"], explanation: "Para preguntar sobre un objeto en pasado simple: What + did + he + buy?", translation: "Contexto: 'Él compró un coche nuevo.' Pregunta: '¿Qué compró él?'" },
+        { id: 'fq8', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "I have been to Paris.", sentenceParts: ["Where", "you", "?"], answerBlocks: ["been", "have", "went", "has", "did"], correctOrder: ["have", "been"], hints: ["Auxiliar", "Participio"], explanation: "Para preguntar sobre lugares visitados en presente perfecto: Where + have + you + been?", translation: "Contexto: 'He estado en París.' Pregunta: '¿Dónde has estado?'" },
+        { id: 'fq9', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "She has finished her work.", sentenceParts: ["", "she", "her work?"], answerBlocks: ["finished", "Did", "Has", "finish", "Have"], correctOrder: ["Has", "finished"], hints: ["Auxiliar", "Participio"], explanation: "Para confirmar una acción en presente perfecto con 'she', la pregunta empieza con 'Has'.", translation: "Contexto: 'Ella ha terminado su trabajo.' Pregunta: '¿Ha terminado ella su trabajo?'" },
+        { id: 'fq10', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "They ate pizza for dinner.", sentenceParts: ["When", "they", "pizza?"], answerBlocks: ["did", "were", "ate", "eat", "do"], correctOrder: ["did", "eat"], hints: ["Auxiliar", "Verbo"], explanation: "Para preguntar cuándo ocurrió una acción en el pasado, se usa 'When + did...'.", translation: "Contexto: 'Cenaron pizza.' Pregunta: '¿Cuándo comieron pizza?'" },
+        { id: 'fq11', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "I'm learning English.", sentenceParts: ["What", "you", "?"], answerBlocks: ["are", "is", "learning", "learn", "do"], correctOrder: ["are", "learning"], hints: ["Verbo to be", "Verbo -ing"], explanation: "Para preguntar sobre una actividad en curso.", translation: "Contexto: 'Estoy aprendiendo inglés.' Pregunta: '¿Qué estás aprendiendo?'" },
+        { id: 'fq12', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "He doesn't like spinach.", sentenceParts: ["What", "he not", "?"], answerBlocks: ["likes", "like", "does", "do", "is"], correctOrder: ["does", "like"], hints: ["Auxiliar", "Verbo"], explanation: "Preguntando sobre lo que no le gusta a alguien.", translation: "Contexto: 'A él no le gustan las espinacas.' Pregunta: '¿Qué no le gusta a él?'" },
+        { id: 'fq13', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "They have lived here for ten years.", sentenceParts: ["How long", "they", "here?"], answerBlocks: ["have", "did", "live", "has", "lived"], correctOrder: ["have", "lived"], hints: ["Auxiliar", "Participio"], explanation: "Usamos 'How long' con Presente Perfecto para duraciones hasta ahora.", translation: "Contexto: 'Han vivido aquí diez años.' Pregunta: '¿Cuánto tiempo han vivido aquí?'" },
+        { id: 'fq14', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "The meeting started at 9 AM.", sentenceParts: ["", "the meeting", "at 9 AM?"], answerBlocks: ["start", "Did", "started", "Was", "Does"], correctOrder: ["Did", "start"], hints: ["Auxiliar", "Verbo"], explanation: "Confirmando la hora de un evento pasado.", translation: "Contexto: 'La reunión empezó a las 9 AM.' Pregunta: '¿Empezó la reunión a las 9 AM?'" },
+        { id: 'fq15', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "She's crying because she is sad.", sentenceParts: ["Why", "she", "?"], answerBlocks: ["is", "does", "cries", "crying", "are"], correctOrder: ["is", "crying"], hints: ["Verbo to be", "Verbo -ing"], explanation: "Preguntando la razón de una acción en curso.", translation: "Contexto: 'Está llorando porque está triste.' Pregunta: '¿Por qué está llorando?'" },
+        { id: 'fq16', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "I have already seen that film.", sentenceParts: ["", "you", "that film?"], answerBlocks: ["saw", "Have", "seen", "Did", "Has"], correctOrder: ["Have", "seen"], hints: ["Auxiliar", "Participio"], explanation: "Pregunta sobre una experiencia pasada.", translation: "Contexto: 'Ya he visto esa película.' Pregunta: '¿Has visto esa película?'" },
+        { id: 'fq17', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "He visits his grandma every Sunday.", sentenceParts: ["How often", "he", "his grandma?"], answerBlocks: ["visits", "visit", "does", "do", "is"], correctOrder: ["does", "visit"], hints: ["Auxiliar", "Verbo"], explanation: "Preguntando sobre la frecuencia de una rutina.", translation: "Contexto: 'Visita a su abuela todos los domingos.' Pregunta: '¿Con qué frecuencia visita a su abuela?'" },
+        { id: 'fq18', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "They weren't at the party.", sentenceParts: ["Why", "they at the party?"], answerBlocks: ["didn't", "wasn't", "weren't"], correctOrder: ["weren't"], hints: ["Aux. Negativo"], explanation: "Preguntando la razón de una ausencia en el pasado.", translation: "Contexto: 'No estaban en la fiesta.' Pregunta: '¿Por qué no estaban en la fiesta?'" },
+        { id: 'fq19', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "She has broken her arm.", sentenceParts: ["What", "she", "?"], answerBlocks: ["has", "have", "broken", "done", "did"], correctOrder: ["has", "done"], hints: ["Auxiliar", "Participio"], explanation: "Preguntando sobre un evento reciente con consecuencias.", translation: "Contexto: 'Se ha roto el brazo.' Pregunta: '¿Qué ha hecho?'" },
+        { id: 'fq20', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "He is a doctor.", sentenceParts: ["What", "he", "?"], answerBlocks: ["is doing", "does", "do", "is", "he"], correctOrder: ["does", "do"], hints: ["Auxiliar", "Verbo"], explanation: "Para preguntar por la profesión de alguien, se usa 'What do you do?' o 'What does he do?'.", translation: "Contexto: 'Él es médico.' Pregunta: '¿A qué se dedica?'" },
+        { id: 'fq21', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "They play soccer on Saturdays.", sentenceParts: ["", "they play soccer on Saturdays?"], answerBlocks: ["Do", "Are", "Does"], correctOrder: ["Do"], hints: ["Auxiliar"], explanation: "Confirmando una rutina.", translation: "Contexto: 'Juegan al fútbol los sábados.' Pregunta: '¿Juegan al fútbol los sábados?'" },
+        { id: 'fq22', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "I am working on a new project.", sentenceParts: ["What", "you", "on?"], answerBlocks: ["work", "working", "am", "are", "do"], correctOrder: ["are", "working"], hints: ["Verbo to be", "Verbo -ing"], explanation: "Preguntando sobre una actividad laboral actual.", translation: "Contexto: 'Estoy trabajando en un nuevo proyecto.' Pregunta: '¿En qué estás trabajando?'" },
+        { id: 'fq23', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "She lost her keys.", sentenceParts: ["", "she", "her keys?"], answerBlocks: ["find", "Did", "found", "Has", "Does"], correctOrder: ["Did", "find"], hints: ["Auxiliar", "Verbo"], explanation: "Preguntando por la resolución de un problema pasado.", translation: "Contexto: 'Ella perdió sus llaves.' Pregunta: '¿Encontró ella sus llaves?'" },
+        { id: 'fq24', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "We have never tried Thai food.", sentenceParts: ["", "you ever", "Thai food?"], answerBlocks: ["try", "tried", "Have", "Did", "Do"], correctOrder: ["Have", "tried"], hints: ["Auxiliar", "Participio"], explanation: "Preguntando sobre experiencias de vida.", translation: "Contexto: 'Nunca hemos probado la comida tailandesa.' Pregunta: '¿Habéis probado alguna vez la comida tailandesa?'" },
+        { id: 'fq25', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "It rains a lot in spring.", sentenceParts: ["", "it", "a lot in spring?"], answerBlocks: ["rain", "Does", "rains", "Is", "Do"], correctOrder: ["Does", "rain"], hints: ["Auxiliar", "Verbo"], explanation: "Confirmando un hecho climático.", translation: "Contexto: 'Llueve mucho en primavera.' Pregunta: '¿Llueve mucho en primavera?'" },
+        { id: 'fq26', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "He is waiting for the bus.", sentenceParts: ["What", "he", "for?"], answerBlocks: ["is", "waits", "waiting", "does", "are"], correctOrder: ["is", "waiting"], hints: ["Verbo to be", "Verbo -ing"], explanation: "Preguntando por el objeto de una espera.", translation: "Contexto: 'Está esperando el autobús.' Pregunta: '¿Qué está esperando?'" },
+        { id: 'fq27', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "They finished the race.", sentenceParts: ["", "they", "the race?"], answerBlocks: ["finish", "Did", "finished", "Have", "Do"], correctOrder: ["Did", "finish"], hints: ["Auxiliar", "Verbo"], explanation: "Confirmando un evento pasado.", translation: "Contexto: 'Terminaron la carrera.' Pregunta: '¿Terminaron la carrera?'" },
+        { id: 'fq28', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "I have known him for a long time.", sentenceParts: ["How long", "you", "him?"], answerBlocks: ["have", "knew", "known", "did", "do"], correctOrder: ["have", "known"], hints: ["Auxiliar", "Participio"], explanation: "Preguntando por la duración de un conocimiento.", translation: "Contexto: 'Lo conozco desde hace mucho tiempo.' Pregunta: '¿Desde cuándo lo conoces?'" },
+        { id: 'fq29', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "The sun rises in the east.", sentenceParts: ["Where", "the sun", "?"], answerBlocks: ["rise", "does", "rises", "is", "do"], correctOrder: ["does", "rise"], hints: ["Auxiliar", "Verbo"], explanation: "Preguntando por la ubicación de un hecho natural.", translation: "Contexto: 'El sol sale por el este.' Pregunta: '¿Por dónde sale el sol?'" },
+        { id: 'fq30', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "He isn't sleeping.", sentenceParts: ["Why", "he", "?"], answerBlocks: ["sleep", "isn't", "is", "sleeping", "doesn't"], correctOrder: ["isn't", "sleeping"], hints: ["Aux. Negativo", "Verbo -ing"], explanation: "Preguntando la razón de por qué algo no está sucediendo.", translation: "Contexto: 'Él no está durmiendo.' Pregunta: '¿Por qué no está durmiendo?'" },
+        { id: 'fq31', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "She wrote a letter.", sentenceParts: ["Who", "a letter?"], answerBlocks: ["written", "did write", "wrote"], correctOrder: ["wrote"], hints: ["Verbo Pasado"], explanation: "Cuando 'Who' es el sujeto, no se usa auxiliar 'did'.", translation: "Contexto: 'Ella escribió una carta.' Pregunta: '¿Quién escribió una carta?'" },
+        { id: 'fq32', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "They haven't arrived yet.", sentenceParts: ["", "they", "yet?"], answerBlocks: ["arrived", "Have", "arrive", "Did", "Are"], correctOrder: ["Have", "arrived"], hints: ["Auxiliar", "Participio"], explanation: "Preguntando si una acción esperada ya ha ocurrido.", translation: "Contexto: 'No han llegado todavía.' Pregunta: '¿Han llegado ya?'" },
+        { id: 'fq33', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "He speaks three languages.", sentenceParts: ["How many languages", "he", "?"], answerBlocks: ["speak", "does", "speaks", "is", "do"], correctOrder: ["does", "speak"], hints: ["Auxiliar", "Verbo"], explanation: "Preguntando por la cantidad de algo.", translation: "Contexto: 'Habla tres idiomas.' Pregunta: '¿Cuántos idiomas habla?'" },
+        { id: 'fq34', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "They are building a house.", sentenceParts: ["What", "they", "?"], answerBlocks: ["are", "build", "building", "do", "is"], correctOrder: ["are", "building"], hints: ["Verbo to be", "Verbo -ing"], explanation: "Preguntando sobre el objeto que se está construyendo.", translation: "Contexto: 'Están construyendo una casa.' Pregunta: '¿Qué están construyendo?'" },
+        { id: 'fq35', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "I didn't watch the game.", sentenceParts: ["Why", "you", "the game?"], answerBlocks: ["watch", "didn't", "watched", "don't", "weren't"], correctOrder: ["didn't", "watch"], hints: ["Aux. Negativo", "Verbo"], explanation: "Preguntando la razón por la que no se hizo algo.", translation: "Contexto: 'No vi el partido.' Pregunta: '¿Por qué no viste el partido?'" },
+        { id: 'fq36', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "She has been working all day.", sentenceParts: ["What", "she", "all day?"], answerBlocks: ["been doing", "has", "worked", "is", "did"], correctOrder: ["has", "been doing"], hints: ["Auxiliar", "Participio"], explanation: "Preguntando sobre la actividad durante un período de tiempo (Presente Perfecto Continuo).", translation: "Contexto: 'Ha estado trabajando todo el día.' Pregunta: '¿Qué ha estado haciendo todo el día?'" },
+        { id: 'fq37', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "He lives in New York.", sentenceParts: ["", "he", "in New York?"], answerBlocks: ["live", "Does", "lives", "Is", "Do"], correctOrder: ["Does", "live"], hints: ["Auxiliar", "Verbo"], explanation: "Confirmando el lugar de residencia.", translation: "Contexto: 'Vive en Nueva York.' Pregunta: '¿Vive en Nueva York?'" },
+        { id: 'fq38', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "The children are playing outside.", sentenceParts: ["Where", "the children", "?"], answerBlocks: ["are", "play", "playing", "is", "do"], correctOrder: ["are", "playing"], hints: ["Verbo to be", "Verbo -ing"], explanation: "Preguntando por la ubicación de una actividad en curso.", translation: "Contexto: 'Los niños están jugando fuera.' Pregunta: '¿Dónde están jugando los niños?'" },
+        { id: 'fq39', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "She sold her car.", sentenceParts: ["", "she", "her car?"], answerBlocks: ["sell", "Did", "sold", "Does", "Has"], correctOrder: ["Did", "sell"], hints: ["Auxiliar", "Verbo"], explanation: "Confirmando una venta en el pasado.", translation: "Contexto: 'Vendió su coche.' Pregunta: '¿Vendió su coche?'" },
+        { id: 'fq40', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "I haven't talked to him.", sentenceParts: ["", "you", "to him?"], answerBlocks: ["talked", "Have", "talk", "Did", "Do"], correctOrder: ["Have", "talked"], hints: ["Auxiliar", "Participio"], explanation: "Preguntando si una acción ha ocurrido.", translation: "Contexto: 'No he hablado con él.' Pregunta: '¿Has hablado con él?'" },
+        { id: 'fq41', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "This bag belongs to Jane.", sentenceParts: ["Who", "this bag", "to?"], answerBlocks: ["belong", "does", "belongs", "is", "do"], correctOrder: ["does", "belong"], hints: ["Auxiliar", "Verbo"], explanation: "Preguntando por la posesión de un objeto.", translation: "Contexto: 'Esta bolsa pertenece a Jane.' Pregunta: '¿A quién pertenece esta bolsa?'" },
+        { id: 'fq42', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "It is snowing.", sentenceParts: ["", "it", "?"], answerBlocks: ["snow", "Is", "snowing", "Does", "Are"], correctOrder: ["Is", "snowing"], hints: ["Verbo to be", "Verbo -ing"], explanation: "Confirmando el tiempo actual.", translation: "Contexto: 'Está nevando.' Pregunta: '¿Está nevando?'" },
+        { id: 'fq43', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "They saw a lion at the zoo.", sentenceParts: ["What", "they", "at the zoo?"], answerBlocks: ["see", "did", "saw", "were", "do"], correctOrder: ["did", "see"], hints: ["Auxiliar", "Verbo"], explanation: "Preguntando qué se vio en un lugar.", translation: "Contexto: 'Vieron un león en el zoo.' Pregunta: '¿Qué vieron en el zoo?'" },
+        { id: 'fq44', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "He has gone home.", sentenceParts: ["Where", "he", "?"], answerBlocks: ["gone", "has", "went", "did", "is"], correctOrder: ["has", "gone"], hints: ["Auxiliar", "Participio"], explanation: "Preguntando por el paradero de alguien.", translation: "Contexto: 'Se ha ido a casa.' Pregunta: '¿Adónde ha ido?'" },
+        { id: 'fq45', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "I get up at 7 AM.", sentenceParts: ["What time", "you", "?"], answerBlocks: ["get up", "do", "gets up", "are", "does"], correctOrder: ["do", "get up"], hints: ["Auxiliar", "Verbo"], explanation: "Preguntando por la hora de una rutina.", translation: "Contexto: 'Me levanto a las 7 AM.' Pregunta: '¿A qué hora te levantas?'" },
+        { id: 'fq46', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "She is wearing a red dress.", sentenceParts: ["What color dress", "she", "?"], answerBlocks: ["is", "wears", "wearing", "does", "are"], correctOrder: ["is", "wearing"], hints: ["Verbo to be", "Verbo -ing"], explanation: "Preguntando por un detalle específico.", translation: "Contexto: 'Lleva un vestido rojo.' Pregunta: '¿De qué color es el vestido que lleva?'" },
+        { id: 'fq47', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "He fixed the computer.", sentenceParts: ["", "he", "the computer?"], answerBlocks: ["fix", "Did", "fixed", "Does", "Was"], correctOrder: ["Did", "fix"], hints: ["Auxiliar", "Verbo"], explanation: "Confirmando una acción pasada.", translation: "Contexto: 'Arregló el ordenador.' Pregunta: '¿Arregló el ordenador?'" },
+        { id: 'fq48', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "They have bought a new television.", sentenceParts: ["What", "they", "?"], answerBlocks: ["have", "buy", "bought", "did", "do"], correctOrder: ["have", "bought"], hints: ["Auxiliar", "Participio"], explanation: "Preguntando qué se ha comprado.", translation: "Contexto: 'Han comprado una televisión nueva.' Pregunta: '¿Qué han comprado?'" },
+        { id: 'fq49', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "She runs every morning.", sentenceParts: ["When", "she", "?"], answerBlocks: ["run", "does", "runs", "is", "do"], correctOrder: ["does", "run"], hints: ["Auxiliar", "Verbo"], explanation: "Preguntando cuándo se realiza una rutina.", translation: "Contexto: 'Corre cada mañana.' Pregunta: '¿Cuándo corre?'" },
+        { id: 'fq50', type: QuestionType.SENTENCE_BUILDER, form: 'Interrogative', contextSentence: "He is talking on the phone.", sentenceParts: ["Who", "he", "to?"], answerBlocks: ["is", "talks", "talking", "does", "are"], correctOrder: ["is", "talking"], hints: ["Verbo to be", "Verbo -ing"], explanation: "Preguntando con quién se está hablando.", translation: "Contexto: 'Está hablando por teléfono.' Pregunta: '¿Con quién está hablando?'" }
+    ] as Question[],
   },
   {
     id: 'learning-answers',
-    title: 'Aprende a Responder',
-    description: 'Elige la respuesta corta y correcta para cada pregunta.',
+    title: 'Preguntas y Respuestas con Contexto',
+    description: 'Elige la respuesta más lógica y gramaticalmente correcta.',
     icon: ChatBubbleLeftEllipsisIcon,
     formula: {
-      affirmative: 'Yes, Sujeto + Aux.',
-      negative: 'No, Sujeto + Aux. + not.',
-      interrogative: 'Use the same auxiliary as the question.',
+        affirmative: 'Yes, Sujeto + Aux.',
+        negative: 'No, Sujeto + Aux. + not.',
+        interrogative: 'Usa el mismo auxiliar de la pregunta',
     },
     questions: [
         {
             id: 'la1',
             type: QuestionType.MULTIPLE_CHOICE,
-            form: 'Affirmative',
-            sentence: 'Question: Do you like coffee?',
+            form: 'Mixed',
+            sentence: 'Do you like coffee?',
             options: [
-                { text: 'Yes, I do.', isCorrect: true },
-                { text: 'Yes, I like.', isCorrect: false },
-                { text: 'Yes, I am.', isCorrect: false },
+                { text: "Yes, I do. I drink a cup every morning.", isCorrect: true },
+                { text: "Yes, I does. I drink it.", isCorrect: false },
+                { text: "No, I not like it. It's too bitter.", isCorrect: false },
+                { text: "Yes, I liking it a lot.", isCorrect: false },
             ],
-            explanation: "La pregunta usa el auxiliar 'do', por lo que la respuesta corta debe usar 'do' o 'don't'.",
-            translation: "Pregunta: ¿Te gusta el café? -> Sí."
+            explanation: "Para responder a 'Do you...?', se usa 'do' o 'don't'. La respuesta correcta usa el auxiliar correcto y añade contexto.",
+            translation: "Pregunta: ¿Te gusta el café? / Respuesta: Sí. Bebo una taza cada mañana."
         },
         {
             id: 'la2',
             type: QuestionType.MULTIPLE_CHOICE,
-            form: 'Negative',
-            sentence: 'Question: Is she coming to the party?',
+            form: 'Mixed',
+            sentence: 'Does he play tennis?',
             options: [
-                { text: "No, she isn't.", isCorrect: true },
-                { text: "No, she doesn't.", isCorrect: false },
-                { text: "No, she not.", isCorrect: false },
+                { text: "No, he doesn't. He thinks it's boring.", isCorrect: true },
+                { text: "No, he don't. He likes soccer more.", isCorrect: false },
+                { text: "Yes, he play tennis very well.", isCorrect: false },
+                { text: "No, he not plays. He is not athletic.", isCorrect: false },
             ],
-            explanation: "La pregunta usa 'is', por lo que la respuesta corta negativa debe usar 'isn't'.",
-            translation: "Pregunta: ¿Viene ella a la fiesta? -> No."
+            explanation: "La pregunta usa 'Does', por lo que la respuesta negativa correcta debe usar 'doesn't'.",
+            translation: "Pregunta: ¿Él juega al tenis? / Respuesta: No. Piensa que es aburrido."
         },
         {
             id: 'la3',
             type: QuestionType.MULTIPLE_CHOICE,
-            form: 'Affirmative',
-            sentence: 'Question: Did they finish the project?',
+            form: 'Mixed',
+            sentence: 'Are they watching the movie?',
             options: [
-                { text: 'Yes, they did.', isCorrect: true },
-                { text: 'Yes, they finished.', isCorrect: false },
-                { text: 'Yes, they have.', isCorrect: false },
+                { text: "Yes, they are. They seem to be enjoying it.", isCorrect: true },
+                { text: "Yes, they do. It's a good movie.", isCorrect: false },
+                { text: "No, they is not. They are bored.", isCorrect: false },
+                { text: "No, they're no watching it.", isCorrect: false },
             ],
-            explanation: "La pregunta usa el auxiliar 'did', por lo que la respuesta corta afirmativa debe usar 'did'.",
-            translation: "Pregunta: ¿Terminaron el proyecto? -> Sí."
+            explanation: "La pregunta usa 'Are', por lo que la respuesta debe usar 'are' o 'aren't'.",
+            translation: "Pregunta: ¿Están viendo la película? / Respuesta: Sí. Parecen estar disfrutándola."
         },
         {
             id: 'la4',
             type: QuestionType.MULTIPLE_CHOICE,
-            form: 'Negative',
-            sentence: 'Question: Have you seen this movie?',
+            form: 'Mixed',
+            sentence: 'Did you finish your homework?',
             options: [
-                { text: "No, I haven't.", isCorrect: true },
-                { text: "No, I didn't.", isCorrect: false },
-                { text: "No, I don't.", isCorrect: false },
+                { text: "Yes, I did. It was easier than I thought.", isCorrect: true },
+                { text: "Yes, I finished. It was easy.", isCorrect: false }, // Common mistake, but "Yes, I did" is better.
+                { text: "No, I not finished it yet.", isCorrect: false },
+                { text: "No, I don't. I will do it later.", isCorrect: false },
             ],
-            explanation: "La pregunta usa 'have', por lo que la respuesta corta negativa debe usar 'haven't'.",
-            translation: "Pregunta: ¿Has visto esta película? -> No."
+            explanation: "La pregunta está en pasado con 'Did', por lo que la respuesta correcta usa el auxiliar 'did'.",
+            translation: "Pregunta: ¿Terminaste tu tarea? / Respuesta: Sí. Fue más fácil de lo que pensaba."
         },
         {
             id: 'la5',
             type: QuestionType.MULTIPLE_CHOICE,
-            form: 'Affirmative',
-            sentence: 'Question: Can you swim?',
+            form: 'Mixed',
+            sentence: 'Have you ever been to Japan?',
             options: [
-                { text: 'Yes, I can.', isCorrect: true },
-                { text: 'Yes, I do.', isCorrect: false },
-                { text: 'Yes, I swim.', isCorrect: false },
+                { text: "No, I haven't, but I would love to go someday.", isCorrect: true },
+                { text: "No, I didn't. Maybe next year.", isCorrect: false },
+                { text: "Yes, I have been there last year.", isCorrect: false }, // Cannot use present perfect with specific past time.
+                { text: "No, I never go to Japan.", isCorrect: false },
             ],
-            explanation: "Con verbos modales como 'can', la respuesta corta usa el mismo verbo modal.",
-            translation: "Pregunta: ¿Sabes nadar? -> Sí."
+            explanation: "La pregunta en Presente Perfecto ('Have you...') se responde con el mismo auxiliar ('have' o 'haven't').",
+            translation: "Pregunta: ¿Has estado alguna vez en Japón? / Respuesta: No, pero me encantaría ir algún día."
         },
-      // 45 more questions
-      ...Array.from({ length: 45 }, (_, i) => {
-        const questions = [
-          // Simple Present
-          // FIX: Add missing 'type' and 'form' properties to Question object.
-          { id: 'la6', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Does he play tennis?', options: [{ text: "No, he doesn't.", isCorrect: true }, { text: "No, he don't.", isCorrect: false }, { text: "No, he isn't.", isCorrect: false }], explanation: "Pregunta con 'Does', respuesta con 'doesn't'.", translation: "¿Él juega al tenis? -> No." },
-          { id: 'la7', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Are they students?', options: [{ text: 'Yes, they are.', isCorrect: true }, { text: 'Yes, they do.', isCorrect: false }, { text: 'Yes, they students.', isCorrect: false }], explanation: "Pregunta con 'Are', respuesta con 'are'.", translation: "¿Son estudiantes? -> Sí." },
-          // Simple Past
-          { id: 'la8', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Did she call you?', options: [{ text: 'Yes, she did.', isCorrect: true }, { text: 'Yes, she called.', isCorrect: false }, { text: 'Yes, she does.', isCorrect: false }], explanation: "Pregunta con 'Did', respuesta con 'did'.", translation: "¿Te llamó? -> Sí." },
-          { id: 'la9', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Were you at home?', options: [{ text: "No, I wasn't.", isCorrect: true }, { text: "No, I didn't.", isCorrect: false }, { text: "No, I weren't.", isCorrect: false }], explanation: "Pregunta con 'Were', respuesta con 'wasn't' para 'I'.", translation: "¿Estabas en casa? -> No." },
-          // Present Continuous
-          { id: 'la10', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Are you listening?', options: [{ text: 'Yes, I am.', isCorrect: true }, { text: 'Yes, I do.', isCorrect: false }, { text: 'Yes, I listen.', isCorrect: false }], explanation: "Pregunta con 'Are you...?', respuesta con 'Yes, I am.'", translation: "¿Estás escuchando? -> Sí." },
-          { id: 'la11', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Is it snowing?', options: [{ text: "No, it isn't.", isCorrect: true }, { text: "No, it doesn't.", isCorrect: false }, { text: "No, not snowing.", isCorrect: false }], explanation: "Pregunta con 'Is', respuesta con 'isn't'.", translation: "¿Está nevando? -> No." },
-          // Present Perfect
-          { id: 'la12', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Has he arrived?', options: [{ text: 'Yes, he has.', isCorrect: true }, { text: 'Yes, he did.', isCorrect: false }, { text: 'Yes, he arrived.', isCorrect: false }], explanation: "Pregunta con 'Has', respuesta con 'has'.", translation: "¿Ha llegado él? -> Sí." },
-          { id: 'la13', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Have they eaten yet?', options: [{ text: "No, they haven't.", isCorrect: true }, { text: "No, they didn't.", isCorrect: false }, { text: "No, they don't.", isCorrect: false }], explanation: "Pregunta con 'Have', respuesta con 'haven't'.", translation: "¿Han comido ya? -> No." },
-          // Modals
-          { id: 'la14', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Will you be there?', options: [{ text: "Yes, I will.", isCorrect: true }, { text: "Yes, I'll be.", isCorrect: false }, { text: "Yes, I do.", isCorrect: false }], explanation: "Pregunta con 'Will', respuesta con 'will'.", translation: "¿Estarás allí? -> Sí." },
-          { id: 'la15', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Should I wait?', options: [{ text: "No, you shouldn't.", isCorrect: true }, { text: "No, you don't.", isCorrect: false }, { text: "No, you not wait.", isCorrect: false }], explanation: "Pregunta con 'Should', respuesta con 'shouldn't'.", translation: "¿Debería esperar? -> No." },
-          // Mixed
-          { id: 'la16', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Do they speak English?', options: [{ text: 'Yes, they do.', isCorrect: true }, { text: 'Yes, they speak.', isCorrect: false }, { text: 'Yes, they are.', isCorrect: false }], explanation: "Pregunta con 'Do', respuesta con 'do'.", translation: "¿Hablan inglés? -> Sí." },
-          { id: 'la17', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Was the movie interesting?', options: [{ text: "No, it wasn't.", isCorrect: true }, { text: "No, it didn't.", isCorrect: false }, { text: "No, it no was.", isCorrect: false }], explanation: "Pregunta con 'Was', respuesta con 'wasn't'.", translation: "¿Fue interesante la película? -> No." },
-          { id: 'la18', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Are we late?', options: [{ text: 'Yes, we are.', isCorrect: true }, { text: 'Yes, we do.', isCorrect: false }, { text: 'Yes, late.', isCorrect: false }], explanation: "Pregunta con 'Are', respuesta con 'are'.", translation: "¿Llegamos tarde? -> Sí." },
-          { id: 'la19', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Did you enjoy the meal?', options: [{ text: 'Yes, I did.', isCorrect: true }, { text: 'Yes, I enjoyed.', isCorrect: false }, { text: 'Yes, I was.', isCorrect: false }], explanation: "Pregunta con 'Did', respuesta con 'did'.", translation: "¿Disfrutaste la comida? -> Sí." },
-          { id: 'la20', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Can she play the piano?', options: [{ text: "No, she can't.", isCorrect: true }, { text: "No, she doesn't.", isCorrect: false }, { text: "No, she can not play.", isCorrect: false }], explanation: "Pregunta con 'Can', respuesta con 'can't'.", translation: "¿Sabe tocar el piano? -> No." },
-          { id: 'la21', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Is your brother a student?', options: [{ text: 'Yes, he is.', isCorrect: true }, { text: 'Yes, he does.', isCorrect: false }, { text: 'Yes, a student.', isCorrect: false }], explanation: "Pregunta con 'Is', respuesta con 'is'.", translation: "¿Tu hermano es estudiante? -> Sí." },
-          { id: 'la22', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Have you finished your homework?', options: [{ text: "No, I haven't.", isCorrect: true }, { text: "No, I didn't.", isCorrect: false }, { text: "No, not finished.", isCorrect: false }], explanation: "Pregunta con 'Have', respuesta con 'haven't'.", translation: "¿Has terminado tu tarea? -> No." },
-          { id: 'la23', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Does the bus stop here?', options: [{ text: 'Yes, it does.', isCorrect: true }, { text: 'Yes, it stops.', isCorrect: false }, { text: 'Yes, it is.', isCorrect: false }], explanation: "Pregunta con 'Does', respuesta con 'does'.", translation: "¿El autobús para aquí? -> Sí." },
-          { id: 'la24', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Were the tickets expensive?', options: [{ text: "No, they weren't.", isCorrect: true }, { text: "No, they didn't.", isCorrect: false }, { text: "No, not expensive.", isCorrect: false }], explanation: "Pregunta con 'Were', respuesta con 'weren't'.", translation: "¿Eran caras las entradas? -> No." },
-          { id: 'la25', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Are you feeling okay?', options: [{ text: 'Yes, I am.', isCorrect: true }, { text: 'Yes, I feel.', isCorrect: false }, { text: 'Yes, I do.', isCorrect: false }], explanation: "Pregunta con 'Are you...?', respuesta con 'Yes, I am.'", translation: "¿Te encuentras bien? -> Sí." },
-          { id: 'la26', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Did it rain yesterday?', options: [{ text: "No, it didn't.", isCorrect: true }, { text: "No, it wasn't.", isCorrect: false }, { text: "No, it don't.", isCorrect: false }], explanation: "Pregunta con 'Did', respuesta con 'didn't'.", translation: "¿Llovió ayer? -> No." },
-          { id: 'la27', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Will she come?', options: [{ text: "No, she won't.", isCorrect: true }, { text: "No, she will.", isCorrect: false }, { text: "No, she doesn't.", isCorrect: false }], explanation: "La negación de 'will' en respuestas cortas es 'won't'.", translation: "¿Vendrá ella? -> No." },
-          { id: 'la28', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Is dinner ready?', options: [{ text: 'Yes, it is.', isCorrect: true }, { text: 'Yes, ready.', isCorrect: false }, { text: 'Yes, it does.', isCorrect: false }], explanation: "Pregunta con 'Is', respuesta con 'is'.", translation: "¿Está lista la cena? -> Sí." },
-          { id: 'la29', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Do you need any help?', options: [{ text: "No, I don't.", isCorrect: true }, { text: "No, I need not.", isCorrect: false }, { text: "No, I am not.", isCorrect: false }], explanation: "Pregunta con 'Do', respuesta con 'don't'.", translation: "¿Necesitas ayuda? -> No." },
-          { id: 'la30', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Has the movie started?', options: [{ text: "Yes, it has.", isCorrect: true }, { text: "Yes, it did.", isCorrect: false }, { text: "Yes, it started.", isCorrect: false }], explanation: "Pregunta con 'Has', respuesta con 'has'.", translation: "¿Ha empezado la película? -> Sí." },
-          { id: 'la31', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Could you pass the salt?', options: [{ text: 'Yes, I can.', isCorrect: true }, { text: 'Yes, I could.', isCorrect: true }, { text: 'Yes, I do.', isCorrect: false }], explanation: "Para peticiones con 'Could', se puede responder con 'can' o 'could'.", translation: "¿Podrías pasar la sal? -> Sí." },
-          { id: 'la32', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Is he a good singer?', options: [{ text: "No, he isn't.", isCorrect: true }, { text: "No, he doesn't.", isCorrect: false }, { text: "No, not a good singer.", isCorrect: false }], explanation: "Pregunta con 'Is', respuesta con 'isn't'.", translation: "¿Es él un buen cantante? -> No." },
-          { id: 'la33', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Did they tell you?', options: [{ text: 'Yes, they did.', isCorrect: true }, { text: 'Yes, they told.', isCorrect: false }, { text: 'Yes, they have.', isCorrect: false }], explanation: "Pregunta con 'Did', respuesta con 'did'.", translation: "¿Te lo dijeron? -> Sí." },
-          { id: 'la34', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Am I right?', options: [{ text: "Yes, you are.", isCorrect: true }, { text: "Yes, I am.", isCorrect: false }, { text: "Yes, you do.", isCorrect: false }], explanation: "La pregunta 'Am I...?' se responde con 'Yes, you are.' o 'No, you aren't.'", translation: "¿Tengo razón? -> Sí." },
-          { id: 'la35', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Do we have enough time?', options: [{ text: "No, we don't.", isCorrect: true }, { text: "No, we haven't.", isCorrect: false }, { text: "No, we aren't.", isCorrect: false }], explanation: "Pregunta con 'Do', respuesta con 'don't'.", translation: "¿Tenemos tiempo suficiente? -> No." },
-          { id: 'la36', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Were they surprised?', options: [{ text: 'Yes, they were.', isCorrect: true }, { text: 'Yes, they did.', isCorrect: false }, { text: 'Yes, surprised.', isCorrect: false }], explanation: "Pregunta con 'Were', respuesta con 'were'.", translation: "¿Estaban sorprendidos? -> Sí." },
-          { id: 'la37', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Has she been informed?', options: [{ text: "No, she hasn't.", isCorrect: true }, { text: "No, she wasn't.", isCorrect: false }, { text: "No, she didn't.", isCorrect: false }], explanation: "Pregunta pasiva en presente perfecto. Respuesta con 'hasn't'.", translation: "¿Ha sido informada? -> No." },
-          { id: 'la38', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Do I know you?', options: [{ text: "No, you don't.", isCorrect: true }, { text: "No, I don't.", isCorrect: false }, { text: "No, you aren't.", isCorrect: false }], explanation: "La pregunta 'Do I...?' se responde con 'Yes, you do.' o 'No, you don't.'", translation: "¿Te conozco? -> No." },
-          { id: 'la39', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Is this seat taken?', options: [{ text: 'Yes, it is.', isCorrect: true }, { text: 'Yes, taken.', isCorrect: false }, { text: 'Yes, it does.', isCorrect: false }], explanation: "Pregunta pasiva con 'is'. Respuesta con 'is'.", translation: "¿Está ocupado este asiento? -> Sí." },
-          { id: 'la40', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Did you sleep well?', options: [{ text: 'Yes, I did.', isCorrect: true }, { text: 'Yes, I slept.', isCorrect: false }, { text: 'Yes, I do.', isCorrect: false }], explanation: "Pregunta con 'Did', respuesta con 'did'.", translation: "¿Dormiste bien? -> Sí." },
-          { id: 'la41', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Should we leave now?', options: [{ text: "No, we shouldn't.", isCorrect: true }, { text: "No, we don't.", isCorrect: false }, { text: "No, not leave.", isCorrect: false }], explanation: "Pregunta con 'Should', respuesta con 'shouldn't'.", translation: "¿Deberíamos irnos ya? -> No." },
-          { id: 'la42', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Does it hurt?', options: [{ text: 'Yes, it does.', isCorrect: true }, { text: 'Yes, it hurts.', isCorrect: false }, { text: 'Yes, it is.', isCorrect: false }], explanation: "Pregunta con 'Does', respuesta con 'does'.", translation: "¿Duele? -> Sí." },
-          { id: 'la43', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Were you listening to me?', options: [{ text: "No, I wasn't.", isCorrect: true }, { text: "No, I didn't.", isCorrect: false }, { text: "No, I'm not.", isCorrect: false }], explanation: "Pregunta en pasado continuo. Respuesta con 'wasn't'.", translation: "¿Me estabas escuchando? -> No." },
-          { id: 'la44', type: QuestionType.MULTIPLE_CHOICE, form: 'Affirmative', sentence: 'Question: Have they ever tried it?', options: [{ text: "Yes, they have.", isCorrect: true }, { text: "Yes, they did.", isCorrect: false }, { text: "Yes, they tried.", isCorrect: false }], explanation: "Pregunta con 'Have', respuesta con 'have'.", translation: "¿Lo han probado alguna vez? -> Sí." },
-          { id: 'la45', type: QuestionType.MULTIPLE_CHOICE, form: 'Negative', sentence: 'Question: Are your parents at home?', options: [{ text: "No, they aren't.", isCorrect: true }, { text: "No, they don't.", isCorrect: false }, { text: "No, not at home.", isCorrect: false }], explanation: "Pregunta con 'Are', respuesta con 'aren't'.", translation: "¿Están tus padres en casa? -> No." },
-        ];
-        return questions[i % questions.length];
-      }).map((q, i) => ({ ...q, id: `la${i + 6}` }))
-    ]
+        {
+            id: 'la6',
+            type: QuestionType.MULTIPLE_CHOICE,
+            form: 'Mixed',
+            sentence: 'What are you doing this weekend?',
+            options: [
+                { text: "I'm going to visit my grandparents.", isCorrect: true },
+                { text: "I visit my grandparents usually.", isCorrect: false },
+                { text: "I will to visit my grandparents.", isCorrect: false },
+                { text: "I am visit my grandparents.", isCorrect: false },
+            ],
+            explanation: "Para hablar de planes futuros, a menudo se usa el Presente Continuo ('I'm going to...').",
+            translation: "Pregunta: ¿Qué haces este fin de semana? / Respuesta: Voy a visitar a mis abuelos."
+        },
+        {
+            id: 'la7',
+            type: QuestionType.MULTIPLE_CHOICE,
+            form: 'Mixed',
+            sentence: 'Why was she crying?',
+            options: [
+                { text: "Because she had lost her wallet.", isCorrect: true },
+                { text: "Because she is losing her wallet.", isCorrect: false },
+                { text: "She was crying because she is sad.", isCorrect: false }, // Tense mismatch
+                { text: "She cries because she lost her wallet.", isCorrect: false },
+            ],
+            explanation: "La pregunta está en Pasado Continuo. La respuesta debe usar un tiempo pasado para explicar la razón.",
+            translation: "Pregunta: ¿Por qué estaba llorando? / Respuesta: Porque había perdido su cartera."
+        },
+        {
+            id: 'la8',
+            type: QuestionType.MULTIPLE_CHOICE,
+            form: 'Mixed',
+            sentence: 'Can you help me with this box?',
+            options: [
+                { text: "Of course, I can. It looks heavy.", isCorrect: true },
+                { text: "Yes, I can to help you.", isCorrect: false },
+                { text: "No, I couldn't. I am busy.", isCorrect: false },
+                { text: "Yes, help is what I do.", isCorrect: false },
+            ],
+            explanation: "Las preguntas con 'Can' se responden usando 'can' o 'can't'.",
+            translation: "Pregunta: ¿Puedes ayudarme con esta caja? / Respuesta: Por supuesto. Parece pesada."
+        },
+        {
+            id: 'la9',
+            type: QuestionType.MULTIPLE_CHOICE,
+            form: 'Mixed',
+            sentence: 'Where did you go on holiday?',
+            options: [
+                { text: "We went to the mountains for a week.", isCorrect: true },
+                { text: "We have gone to the mountains.", isCorrect: false },
+                { text: "We did go to the mountains.", isCorrect: false },
+                { text: "We were in the mountains for a week.", isCorrect: false }, // Grammatically okay, but 'went' is a more direct answer.
+            ],
+            explanation: "La pregunta usa 'did go', por lo que la respuesta debe usar el pasado simple del verbo, 'went'.",
+            translation: "Pregunta: ¿A dónde fuiste de vacaciones? / Respuesta: Fuimos a las montañas durante una semana."
+        },
+        {
+            id: 'la10',
+            type: QuestionType.MULTIPLE_CHOICE,
+            form: 'Mixed',
+            sentence: 'Is this your book?',
+            options: [
+                { text: "No, it isn't. I think it's Maria's.", isCorrect: true },
+                { text: "No, it's not my. It's of Maria.", isCorrect: false },
+                { text: "No, this not is my book.", isCorrect: false },
+                { text: "Yes, it's mine. Thank for finding it.", isCorrect: false }, // Spelling error 'Thank'
+            ],
+            explanation: "Se responde a 'Is it...?' con 'Yes, it is' o 'No, it isn't'.",
+            translation: "Pregunta: ¿Es este tu libro? / Respuesta: No, no lo es. Creo que es de María."
+        },
+        {
+            id: 'la11',
+            type: QuestionType.MULTIPLE_CHOICE,
+            form: 'Mixed',
+            sentence: "What does your father do?",
+            options: [
+                { text: "He's an engineer at a large company.", isCorrect: true },
+                { text: "He's doing his work right now.", isCorrect: false },
+                { text: "He does his job very well.", isCorrect: false },
+                { text: "He is engineer.", isCorrect: false }, // Missing 'an'
+            ],
+            explanation: "Esta pregunta se refiere a la profesión. La respuesta correcta describe su trabajo.",
+            translation: "Pregunta: ¿A qué se dedica tu padre? / Respuesta: Es ingeniero en una gran empresa."
+        },
+        {
+            id: 'la12',
+            type: QuestionType.MULTIPLE_CHOICE,
+            form: 'Mixed',
+            sentence: "She has already left, hasn't she?",
+            options: [
+                { text: "Yes, she has. She left about 10 minutes ago.", isCorrect: true },
+                { text: "Yes, she did. She left early.", isCorrect: false },
+                { text: "No, she hasn't left. She is still here.", isCorrect: false }, // Also a valid answer, but the question implies confirmation. Let's make the positive one the answer.
+                { text: "No, she didn't. She is coming back.", isCorrect: false },
+            ],
+            explanation: "Las 'tag questions' se confirman o niegan usando el mismo auxiliar. 'hasn't she?' se responde con 'Yes, she has.' o 'No, she hasn't.'",
+            translation: "Pregunta: Ella ya se ha ido, ¿verdad? / Respuesta: Sí. Se fue hace unos 10 minutos."
+        },
+        {
+            id: 'la13',
+            type: QuestionType.MULTIPLE_CHOICE,
+            form: 'Mixed',
+            sentence: 'Whose keys are these?',
+            options: [
+                { text: "They are mine. Thank you!", isCorrect: true },
+                { text: "They are from me. Thanks.", isCorrect: false },
+                { text: "It's my keys. Thank you.", isCorrect: false },
+                { text: "This keys are mine. Thank you.", isCorrect: false },
+            ],
+            explanation: "Para indicar posesión, se usan los pronombres posesivos como 'mine', 'yours', 'his', 'hers'.",
+            translation: "Pregunta: ¿De quién son estas llaves? / Respuesta: Son mías. ¡Gracias!"
+        },
+        {
+            id: 'la14',
+            type: QuestionType.MULTIPLE_CHOICE,
+            form: 'Mixed',
+            sentence: 'How long have you been waiting?',
+            options: [
+                { text: "I've been waiting for about an hour.", isCorrect: true },
+                { text: "I am waiting since one hour.", isCorrect: false },
+                { text: "I waited for an hour.", isCorrect: false },
+                { text: "I wait here for about an hour.", isCorrect: false },
+            ],
+            explanation: "La pregunta usa Presente Perfecto Continuo, por lo que la respuesta debe usar el mismo tiempo verbal para indicar la duración.",
+            translation: "Pregunta: ¿Cuánto tiempo llevas esperando? / Respuesta: Llevo esperando cerca de una hora."
+        },
+        {
+            id: 'la15',
+            type: QuestionType.MULTIPLE_CHOICE,
+            form: 'Mixed',
+            sentence: 'You didn\'t go to the meeting, did you?',
+            options: [
+                { text: "No, I didn't. I had another appointment.", isCorrect: true },
+                { text: "No, I don't. I was busy.", isCorrect: false },
+                { text: "Yes, I did. I arrived a bit late.", isCorrect: false }, // Also possible, but let's stick to one correct option.
+                { text: "Yes, I didn't. I was sick.", isCorrect: false },
+            ],
+            explanation: "Se responde a la 'tag question' basándose en la realidad. Si no fuiste, dices 'No, I didn't'.",
+            translation: "Pregunta: No fuiste a la reunión, ¿verdad? / Respuesta: No, no fui. Tenía otra cita."
+        },
+        { id: 'la16', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'Does the shop open on Sundays?', options: [ { text: "No, it doesn't. It opens from Monday to Saturday.", isCorrect: true }, { text: "No, it don't open on Sundays.", isCorrect: false }, { text: "Yes, it is open. You can go.", isCorrect: false }, { text: "No, it not open. It is closed.", isCorrect: false } ], explanation: "La pregunta con 'Does' para 'it' se responde con 'doesn't'.", translation: "Pregunta: ¿Abre la tienda los domingos? / Respuesta: No. Abre de lunes a sábado." },
+        { id: 'la17', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'Is it going to rain tomorrow?', options: [ { text: "I think so. The forecast said there's a high chance.", isCorrect: true }, { text: "Yes, it will to rain tomorrow.", isCorrect: false }, { text: "No, it not going to rain.", isCorrect: false }, { text: "Maybe it rain. I don't know.", isCorrect: false } ], explanation: "Se puede responder a una pregunta sobre el futuro con 'I think so' o dando más información.", translation: "Pregunta: ¿Va a llover mañana? / Respuesta: Creo que sí. El pronóstico dijo que hay una alta probabilidad." },
+        { id: 'la18', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'What time did you get home last night?', options: [ { text: "I got home around midnight.", isCorrect: true }, { text: "I get home at midnight.", isCorrect: false }, { text: "I did get home around midnight.", isCorrect: false }, { text: "I have gotten home around midnight.", isCorrect: false } ], explanation: "La pregunta en Pasado Simple se responde con un verbo en Pasado Simple ('got').", translation: "Pregunta: ¿A qué hora llegaste a casa anoche? / Respuesta: Llegué a casa sobre la medianoche." },
+        { id: 'la19', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'Would you like another drink?', options: [ { text: "No, thank you. I'm fine for now.", isCorrect: true }, { text: "Yes, I would to like another.", isCorrect: false }, { text: "No, I wouldn't. I have enough.", isCorrect: false }, // Awkward phrasing
+            { text: "Yes, please. I will have a water.", isCorrect: false } ], explanation: "Una oferta con 'Would you like...?' se puede aceptar con 'Yes, please.' o rechazar cortésmente con 'No, thank you.'.", translation: "Pregunta: ¿Te gustaría otra bebida? / Respuesta: No, gracias. Estoy bien por ahora." },
+        { id: 'la20', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'Has she fed the dog yet?', options: [ { text: "Yes, she has. She fed him an hour ago.", isCorrect: true }, { text: "Yes, she did. He is happy now.", isCorrect: false }, { text: "No, she not fed him.", isCorrect: false }, { text: "No, she haves not. He is hungry.", isCorrect: false } ], explanation: "La pregunta en Presente Perfecto con 'Has' se responde con el mismo auxiliar.", translation: "Pregunta: ¿Ya le ha dado de comer al perro? / Respuesta: Sí. Le dio de comer hace una hora." },
+        { id: 'la21', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'Where were you yesterday?', options: [ { text: "I was at work all day.", isCorrect: true }, { text: "I am at work.", isCorrect: false }, { text: "I were at work all day.", isCorrect: false }, { text: "I did be at work.", isCorrect: false } ], explanation: "A la pregunta con 'were you...?', se responde con 'I was...'.", translation: "Pregunta: ¿Dónde estuviste ayer? / Respuesta: Estuve en el trabajo todo el día." },
+        { id: 'la22', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "You're a teacher, aren't you?", options: [ { text: "Yes, that's right. I teach history.", isCorrect: true }, { text: "Yes, I'm. I am a teacher.", isCorrect: false }, { text: "No, you aren't. I am a doctor.", isCorrect: false }, { text: "No, I am not teacher.", isCorrect: false } ], explanation: "Se responde a la 'tag question' confirmando la información con 'Yes, that's right' o 'Yes, I am'.", translation: "Pregunta: Eres profesor, ¿no? / Respuesta: Sí, correcto. Enseño historia." },
+        { id: 'la23', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'How often do you go to the cinema?', options: [ { text: "Not very often. Maybe once a month.", isCorrect: true }, { text: "I go sometimes. I like movies.", isCorrect: false }, // Vague
+            { text: "I am going to the cinema tomorrow.", isCorrect: false }, { text: "I have gone twice this year.", isCorrect: false } ], explanation: "'How often' pregunta por la frecuencia. Se responde con adverbios de frecuencia como 'once a month'.", translation: "Pregunta: ¿Con qué frecuencia vas al cine? / Respuesta: No muy a menudo. Quizás una vez al mes." },
+        { id: 'la24', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'Did it rain during the night?', options: [ { text: "Yes, it did. The ground is still wet.", isCorrect: true }, { text: "Yes, it was raining. The ground is wet.", isCorrect: false }, { text: "No, it not rained.", isCorrect: false }, { text: "No, it doesn't. The sky is clear now.", isCorrect: false } ], explanation: "La pregunta en Pasado Simple con 'Did' se responde con el mismo auxiliar.", translation: "Pregunta: ¿Llovió durante la noche? / Respuesta: Sí. El suelo todavía está húmedo." },
+        { id: 'la25', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'What kind of music do you like?', options: [ { text: "I mostly listen to rock and pop.", isCorrect: true }, { text: "I am liking rock music.", isCorrect: false }, { text: "The music I like is good.", isCorrect: false }, { text: "I do like rock and pop music.", isCorrect: false } ], explanation: "Esta pregunta pide una preferencia. La respuesta directa nombra los géneros musicales.", translation: "Pregunta: ¿Qué tipo de música te gusta? / Respuesta: Escucho sobre todo rock y pop." },
+        { id: 'la26', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "Why haven't you started yet?", options: [ { text: "Because I'm still waiting for the instructions.", isCorrect: true }, { text: "Because I not start yet.", isCorrect: false }, { text: "I will start soon, don't worry.", isCorrect: false }, // Doesn't answer 'Why'
+            { text: "Because I didn't received the instructions.", isCorrect: false } ], explanation: "Una pregunta con 'Why' se responde con 'Because...'. El tiempo verbal debe ser coherente.", translation: "Pregunta: ¿Por qué no has empezado todavía? / Respuesta: Porque todavía estoy esperando las instrucciones." },
+        { id: 'la27', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'Do you know where the station is?', options: [ { text: "Yes, it's just down this street, on the left.", isCorrect: true }, { text: "Yes, I know. It is there.", isCorrect: false }, { text: "No, I don't know where is the station.", isCorrect: false }, // Incorrect word order
+            { text: "Yes, I knowing. It's close.", isCorrect: false } ], explanation: "La respuesta correcta no solo confirma, sino que también proporciona la información solicitada de manera clara.", translation: "Pregunta: ¿Sabes dónde está la estación? / Respuesta: Sí, está al final de esta calle, a la izquierda." },
+        { id: 'la28', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'Have they replied to your email?', options: [ { text: "No, they haven't. I'm still waiting.", isCorrect: true }, { text: "No, they didn't. I wait.", isCorrect: false }, { text: "Yes, they have replied me yesterday.", isCorrect: false }, // Tense error
+            { text: "Not yet. I hope they reply me soon.", isCorrect: false } ], explanation: "La pregunta en Presente Perfecto se responde con el mismo auxiliar ('haven't').", translation: "Pregunta: ¿Han respondido a tu correo? / Respuesta: No. Todavía estoy esperando." },
+        { id: 'la29', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "I'm really tired today.", options: [ { text: "You should get some rest then.", isCorrect: true }, { text: "Why you are tired?", isCorrect: false }, { text: "You must to sleep more.", isCorrect: false }, { text: "I am not tired. I am full of energy.", isCorrect: false } ], explanation: "Una respuesta empática y que ofrece un consejo ('You should...') es una reacción natural y correcta.", translation: "Enunciado: Estoy muy cansado hoy. / Respuesta: Deberías descansar un poco entonces." },
+        { id: 'la30', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'Could you speak more slowly, please?', options: [ { text: "Of course. Is this pace better for you?", isCorrect: true }, { text: "No, I couldn't. This is my normal speed.", isCorrect: false }, { text: "Yes, I can to speak slowly.", isCorrect: false }, { text: "Why? You not understand me?", isCorrect: false } ], explanation: "Una respuesta afirmativa y educada a una petición con 'Could' es 'Of course' o 'Certainly'.", translation: "Pregunta: ¿Podría hablar más despacio, por favor? / Respuesta: Por supuesto. ¿Este ritmo es mejor para ti?" },
+        { id: 'la31', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'Whose jacket is this?', options: [ { text: "I think it's Tom's. He was wearing a similar one.", isCorrect: true }, { text: "It's a jacket of Tom.", isCorrect: false }, { text: "This jacket is of Tom.", isCorrect: false }, { text: "I don't know whose is it.", isCorrect: false } ], explanation: "Para indicar posesión, se usa el genitivo sajón ('Tom's').", translation: "Pregunta: ¿De quién es esta chaqueta? / Respuesta: Creo que es de Tom. Llevaba una parecida." },
+        { id: 'la32', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "You speak English very well.", options: [ { text: "Thank you. I've been learning for five years.", isCorrect: true }, { text: "Yes, I speak it good.", isCorrect: false }, { text: "Thanks. I am learning it since five years.", isCorrect: false }, { text: "I know. It's because I'm smart.", isCorrect: false } ], explanation: "La respuesta educada a un cumplido es 'Thank you', y a menudo se añade información adicional.", translation: "Enunciado: Hablas inglés muy bien. / Respuesta: Gracias. Llevo cinco años aprendiendo." },
+        { id: 'la33', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "What's the weather like?", options: [ { text: "It's sunny but a bit windy.", isCorrect: true }, { text: "The weather is like good.", isCorrect: false }, { text: "It's like hot and sunny.", isCorrect: false }, { text: "I like the weather. It's fine.", isCorrect: false } ], explanation: "La pregunta 'What's the weather like?' pide una descripción del tiempo.", translation: "Pregunta: ¿Qué tiempo hace? / Respuesta: Hace sol pero un poco de viento." },
+        { id: 'la34', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "I passed my exam!", options: [ { text: "Congratulations! I knew you could do it.", isCorrect: true }, { text: "Good job. The exam was difficult?", isCorrect: false }, { text: "Congratulation! That's a good new.", isCorrect: false }, { text: "Well done. I passed it too.", isCorrect: false } ], explanation: "La respuesta apropiada a una buena noticia es una felicitación como 'Congratulations!' o 'Well done!'.", translation: "Enunciado: ¡Aprobé mi examen! / Respuesta: ¡Felicidades! Sabía que podías hacerlo." },
+        { id: 'la35', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'Are you ready to order?', options: [ { text: "Yes, I am. I'll have the chicken salad, please.", isCorrect: true }, { text: "Not yet. I want to see the menu.", isCorrect: false }, { text: "Yes, I'm ready. I will to have the salad.", isCorrect: false }, { text: "I order now. I want chicken.", isCorrect: false } ], explanation: "Una respuesta directa y educada en un restaurante, usando 'I'll have...' para pedir.", translation: "Pregunta: ¿Está listo para pedir? / Respuesta: Sí. Tomaré la ensalada de pollo, por favor." },
+        { id: 'la36', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "He's never on time, is he?", options: [ { text: "No, he isn't. He's always late.", isCorrect: true }, { text: "No, he is. He comes late.", isCorrect: false }, { text: "Yes, he is never on time.", isCorrect: false }, { text: "Yes, he isn't. He's late.", isCorrect: false } ], explanation: "La 'tag question' confirma una idea negativa. Se responde con 'No, he isn't' para estar de acuerdo.", translation: "Pregunta: Él nunca llega a tiempo, ¿verdad? / Respuesta: No. Siempre llega tarde." },
+        { id: 'la37', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "I'm sorry, I'm late.", options: [ { text: "Don't worry about it. We just started.", isCorrect: true }, { text: "It's okay. Why you are late?", isCorrect: false }, { text: "No problem. You must come earlier.", isCorrect: false }, { text: "You are welcome. Please sit down.", isCorrect: false } ], explanation: "Una respuesta tranquilizadora como 'Don't worry' o 'No problem' es la forma educada de aceptar una disculpa.", translation: "Enunciado: Siento llegar tarde. / Respuesta: No te preocupes. Acabamos de empezar." },
+        { id: 'la38', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "What does this word mean?", options: [ { text: "I'm not sure. You should look it up in a dictionary.", isCorrect: true }, { text: "It means... I can't to explain.", isCorrect: false }, { text: "This word has a meaning. I don't know it.", isCorrect: false }, { text: "I not know the meaning of this word.", isCorrect: false } ], explanation: "Si no sabes la respuesta, es correcto decirlo y sugerir una solución, como usar un diccionario.", translation: "Pregunta: ¿Qué significa esta palabra? / Respuesta: No estoy seguro. Deberías buscarla en un diccionario." },
+        { id: 'la39', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "Have a good weekend!", options: [ { text: "Thanks, you too!", isCorrect: true }, { text: "Yes, I will have a good weekend.", isCorrect: false }, { text: "Thank you. For you too.", isCorrect: false }, { text: "The same for you. Thanks.", isCorrect: false } ], explanation: "La respuesta estándar y educada a 'Have a good weekend' es 'You too' o 'Thanks, you too'.", translation: "Enunciado: ¡Que tengas un buen fin de semana! / Respuesta: ¡Gracias, tú también!" },
+        { id: 'la40', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'Should we leave now?', options: [ { text: "Yes, we should. It's getting late.", isCorrect: true }, { text: "No, we shouldn't to leave.", isCorrect: false }, { text: "Yes, we must leaving now.", isCorrect: false }, { text: "I don't know if we should.", isCorrect: false } ], explanation: "La pregunta con el modal 'Should' se responde lógicamente con 'should' o 'shouldn't'.", translation: "Pregunta: ¿Deberíamos irnos ya? / Respuesta: Sí. Se está haciendo tarde." },
+        { id: 'la41', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "Don't forget to buy milk.", options: [ { text: "Okay, I won't. I'll add it to the list.", isCorrect: true }, { text: "Yes, I don't forget.", isCorrect: false }, { text: "Okay, I will to remember.", isCorrect: false }, { text: "I not forget. Don't worry.", isCorrect: false } ], explanation: "Una forma natural de responder a un recordatorio es 'Okay, I won't' (forget).", translation: "Enunciado: No te olvides de comprar leche. / Respuesta: Vale, no lo haré. Lo añadiré a la lista." },
+        { id: 'la42', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'How was your trip?', options: [ { text: "It was amazing! We had a great time.", isCorrect: true }, { text: "The trip was good. I like it.", isCorrect: false }, { text: "It has been amazing. We have fun.", isCorrect: false }, { text: "Was great! We have had a great time.", isCorrect: false } ], explanation: "Se pregunta por un evento pasado ('was'), por lo que la respuesta debe estar en Pasado Simple.", translation: "Pregunta: ¿Qué tal tu viaje? / Respuesta: ¡Fue increíble! Lo pasamos genial." },
+        { id: 'la43', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "Is there anything else I can help you with?", options: [ { text: "No, that's all for now. Thank you.", isCorrect: true }, { text: "No, it's not anything else.", isCorrect: false }, { text: "Yes, help me with my bags.", isCorrect: false }, // Demasiado directo
+            { text: "No, I am not needing more help.", isCorrect: false } ], explanation: "Una respuesta educada y común para finalizar una interacción de servicio.", translation: "Pregunta: ¿Puedo ayudarte en algo más? / Respuesta: No, eso es todo por ahora. Gracias." },
+        { id: 'la44', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: 'What happened?', options: [ { text: "There was an accident, but nobody was hurt.", isCorrect: true }, { text: "An accident is happened.", isCorrect: false }, { text: "It happened an accident.", isCorrect: false }, { text: "What happened was an accident.", isCorrect: false } ], explanation: "Para describir un evento pasado, se usa la estructura 'There was/were...'.", translation: "Pregunta: ¿Qué pasó? / Respuesta: Hubo un accidente, pero nadie resultó herido." },
+        { id: 'la45', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "This is my friend, David.", options: [ { text: "Nice to meet you, David.", isCorrect: true }, { text: "I am pleased to meet David.", isCorrect: false }, { text: "Hello, my name is... Nice to know you.", isCorrect: false }, { text: "A pleasure, David. How is it going?", isCorrect: false } ], explanation: "La respuesta estándar al ser presentado a alguien es 'Nice to meet you'.", translation: "Enunciado: Este es mi amigo, David. / Respuesta: Encantado de conocerte, David." },
+        { id: 'la46', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "Could you tell me the time, please?", options: [ { text: "Certainly. It's half past ten.", isCorrect: true }, { text: "Yes, I can. The time is 10:30.", isCorrect: false }, { text: "Of course. It's the ten and a half.", isCorrect: false }, { text: "The time is half past ten now.", isCorrect: false } ], explanation: "'Certainly' es una forma educada de aceptar una petición. 'Half past ten' es una forma común de decir la hora.", translation: "Pregunta: ¿Podría decirme la hora, por favor? / Respuesta: Por supuesto. Son las diez y media." },
+        { id: 'la47', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "I don't understand this.", options: [ { text: "Let me try to explain it in a different way.", isCorrect: true }, { text: "Why you don't understand?", isCorrect: false }, { text: "This is not so difficult to understand.", isCorrect: false }, { text: "You must to pay more attention.", isCorrect: false } ], explanation: "Una respuesta útil y colaborativa es ofrecerse a explicar de nuevo.", translation: "Enunciado: No entiendo esto. / Respuesta: Déjame intentar explicarlo de otra manera." },
+        { id: 'la48', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "What are you looking for?", options: [ { text: "I'm looking for my glasses. I can't find them.", isCorrect: true }, { text: "I look for my glasses. Where are they?", isCorrect: false }, { text: "I am look for my glasses.", isCorrect: false }, { text: "My glasses is what I am looking for.", isCorrect: false } ], explanation: "La pregunta en Presente Continuo se responde con el mismo tiempo verbal.", translation: "Pregunta: ¿Qué estás buscando? / Respuesta: Estoy buscando mis gafas. No las encuentro." },
+        { id: 'la49', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "How much did your ticket cost?", options: [ { text: "It cost about 50 euros.", isCorrect: true }, { text: "It costs 50 euros.", isCorrect: false }, { text: "It did cost 50 euros.", isCorrect: false }, { text: "The cost was of 50 euros.", isCorrect: false } ], explanation: "La pregunta en pasado con 'did' requiere una respuesta con el verbo en pasado ('cost' es irregular y no cambia).", translation: "Pregunta: ¿Cuánto costó tu billete? / Respuesta: Costó unos 50 euros." },
+        { id: 'la50', type: QuestionType.MULTIPLE_CHOICE, form: 'Mixed', sentence: "May I use your phone?", options: [ { text: "Sure, go ahead.", isCorrect: true }, { text: "Yes, you may. Here it is.", isCorrect: false }, { text: "No, you may not. It's mine.", isCorrect: false }, { text: "Yes, you can to use it.", isCorrect: false } ], explanation: "'Sure, go ahead' es una forma informal y común de dar permiso.", translation: "Pregunta: ¿Puedo usar tu teléfono? / Respuesta: Claro, adelante." }
+    ] as Question[],
   },
 ];

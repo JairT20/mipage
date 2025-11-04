@@ -8,8 +8,9 @@ export enum GameState {
 }
 
 export enum QuestionType {
-  FILL_IN_THE_BLANK,
+  FILL_IN_THE_BLANK, // Same as MULTIPLE_CHOICE for now, can be specialized later
   MULTIPLE_CHOICE,
+  SENTENCE_BUILDER,
 }
 
 export interface AnswerOption {
@@ -17,15 +18,32 @@ export interface AnswerOption {
   isCorrect: boolean;
 }
 
-export interface Question {
+// Base interface for all question types
+interface BaseQuestion {
   id: string;
-  type: QuestionType;
-  form: 'Affirmative' | 'Negative' | 'Interrogative';
-  sentence: string; // e.g., "She ___ (work) on weekends."
-  options: AnswerOption[];
+  form: 'Affirmative' | 'Negative' | 'Interrogative' | 'Mixed';
   explanation: string;
   translation: string;
 }
+
+export interface MultipleChoiceQuestion extends BaseQuestion {
+  type: QuestionType.MULTIPLE_CHOICE | QuestionType.FILL_IN_THE_BLANK;
+  sentence: string; // e.g., "She ___ (work) on weekends."
+  options: AnswerOption[];
+}
+
+export interface SentenceBuilderQuestion extends BaseQuestion {
+    type: QuestionType.SENTENCE_BUILDER;
+    contextSentence: string; // The statement or question to respond to.
+    sentenceParts: string[]; // e.g., ["Where", "she", "?"] -> Where ___ she ___?
+    answerBlocks: string[]; // e.g., ["does", "work"]
+    correctOrder: string[]; // e.g., ["does", "work"]
+    hints?: string[]; // e.g., ["Auxiliar", "Verbo"]
+}
+
+
+export type Question = MultipleChoiceQuestion | SentenceBuilderQuestion;
+
 
 export interface Level {
   id: string;
